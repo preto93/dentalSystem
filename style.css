@@ -5,7 +5,7 @@
     font-family: sans-serif;
 }
 
-body {
+#ingreso {
     display:  flex;
     align-items:  center;
     justify-content: center;
@@ -68,3 +68,35 @@ form button {
     font-size: 20px;
 }
 
+#nuevousuario {
+    display:  flex;
+    align-items:  center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url(./img/dentalsystemhome.png);
+
+}
+
+#home {
+    display:  flex;
+    align-items:  center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url(./img/DentalSystemWireframe.png);
+}
+
+#turno{
+    display:  flex;
+    align-items:  center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url(./img/DentalSystemWireframe.png);
+}
+
+#odontologo{
+    display:  flex;
+    align-items:  center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url(./img/odontologo.png);
+}

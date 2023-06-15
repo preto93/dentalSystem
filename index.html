@@ -30,25 +30,71 @@
         <a href="a" class="link">Forgot your password?</a>
         <button id="button">Ingresar</button>
         <button id="button">Nuevo usuario</button>
+        
+    </form>
     </section>
 
+
 <section id="nuevousuario">
-
+    <form>
+        <i class="fa-solid fa-tooth"></i>
+        <h1 class="title">NUEVO USUARIO</h1>
+        <label>
+            <i class="fa-solid fa-user"></i>
+            <input placeholder="username / email" type="text" id="username">
+        </label>
+        <label>
+            <i class="fa-solid fa-key"></i>
+            <input placeholder="password" type="password" id="password">
+        </label>
+        <label for="roles">Seleccionar rol:</label>
+            <select id="roles" name="roles" multiple>
+                <option value="admin">Admin</option>
+                <option value="paciente">Paciente</option>
+                <option value="odontologo">Odontologo</option>
+            </select>
+        <button id="button">Registrarse</button>
+        <button id="button">Volver al inicio</button>
+    </form>
 </section>
 
-<section id="newuser">
-
-</section>
 
 <section id="home">
-
+    <h1 class="title">HOME</h1>
+    <span>
+        
+    <button id="button">Registrar Turno</button>
+    <button id="button">Odontologos</button>
+    <button id="button">Pacientes</button>
+    </span>
 </section>
 
 <section id="turno">
+    <h1 class="title">TURNOS</h1>
+    <span>
+        
+    <button id="button">Asignar Paciente</button>
+    <button id="button">Asignar Odontologo</button>
+    <button id="button">Elegir fecha y hora</button>
+    <button id="button">Confirmar turno</button>
+    </span>
 
 </section>
 
 <section id="odontologo">
+    <span>
+    <button id="button">Listar</button>
+    <button id="button">Agregar</button>
+    <button id="button">Modificar</button>
+    <button id="button">Eliminar</button>
+    </span>
+
+    <span>
+        <button id="button">Nombre y apellido</button>
+        <button id="button">DNI</button>
+        <button id="button">Domiiclio</button>
+        <button id="button">Fecha de alta</button>
+        </span>
 
 </section>
 
@@ -57,7 +103,7 @@
 </section>
 
 
-    </form>
+    
     <script src="main.js"></script>
 </body>
 </html>
