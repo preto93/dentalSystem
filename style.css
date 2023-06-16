@@ -31,6 +31,8 @@ margin-bottom: 70px;
 
 #ingreso {
     display:  flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items:  center;
     justify-content: center;
     min-height: 100vh;
@@ -44,6 +46,7 @@ form {
     text-align: center;
     padding: 20px 25px;
     box-shadow: 0 5px 10px rgba(71, 3, 6, 0.7);
+    align-items: center ;
 }
 
 form .title {
@@ -93,13 +96,26 @@ button {
     border-radius: 25px;
 }
 
+#redes {
+    padding: 20px;
+    width: 40vh;
+    display: flex;
+    justify-content: space-around;  
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
 #nuevousuario {
     display:  flex;
+    flex-direction: column;
     align-items:  center;
     justify-content: center;
-    min-height: 100vh;
     background-image: url(./img/dentalsystemhome.png);
 
+}
+
+#nuevousuario form {
+    margin-top: 100px;
 }
 
 #home {
@@ -113,7 +129,7 @@ button {
 
 
 #homecontenedor{
-    background: #726f6f;
+    background: #c3bfbf;
     height: 40vh;
     width: 80vh;
     display: flex;
@@ -132,7 +148,7 @@ button {
 }
 
 #turnoscontenedor{
-    background: #726f6f;
+    background: #c3bfbf;
     height: 70vh;
     width: 80vh;
     display: flex;
