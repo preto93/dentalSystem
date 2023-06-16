@@ -5,6 +5,30 @@
     font-family: sans-serif;
 }
 
+.title{
+margin-bottom: 70px;
+}
+
+.logo-container {
+    position: fixed;
+    display: flex;
+    top: 10px;
+    left: 10px;
+    z-index: 9999;
+    padding: 20px;
+    align-items: center;
+}
+
+.logo-container i {
+    margin:15px;
+    height: 20px;
+    font-size: 25px;
+}
+
+.logo-container p {
+    font-size: 20px;
+}
+
 #ingreso {
     display:  flex;
     align-items:  center;
@@ -58,7 +82,7 @@ form .link {
     margin-bottom: 15px;
 }
 
-form button {
+button {
     color: #fff;
     border: none;
     background: linear-gradient(to right, #cb232c, #ce1d61);
@@ -66,6 +90,7 @@ form button {
     margin-top: 20px;
     cursor: pointer;
     font-size: 20px;
+    border-radius: 25px;
 }
 
 #nuevousuario {
@@ -79,10 +104,22 @@ form button {
 
 #home {
     display:  flex;
+    flex-direction: column;
     align-items:  center;
     justify-content: center;
     min-height: 100vh;
     background-image: url(./img/DentalSystemWireframe.png);
+}
+
+
+#homecontenedor{
+    background: #726f6f;
+    height: 40vh;
+    width: 80vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
 }
 
 #turno{
@@ -91,14 +128,55 @@ form button {
     justify-content: center;
     min-height: 100vh;
     background-image: url(./img/DentalSystemWireframe.png);
+    flex-direction:column;
+}
+
+#turnoscontenedor{
+    background: #726f6f;
+    height: 70vh;
+    width: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
 }
 
 #odontologo{
     display:  flex;
+    flex-direction: column;
     align-items:  center;
     justify-content: center;
     min-height: 100vh;
     background-image: url(./img/odontologo.png);
+}
+
+#box1{
+    background: #726f6f;
+    height: 70vh;
+    width: 90vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+#box1 button {
+    color: #fff;
+    border: none;
+    background: linear-gradient(to right, #cb232c, #ce1d61);
+    padding: 15px 15px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#newodontologo{
+    height: 50vh;
+    width: 30vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 #paciente{
@@ -107,5 +185,13 @@ form button {
     justify-content: center;
     min-height: 100vh;
     background-image: url(./img/paciente.png);
+}
+
+#accionescont{
+    display: flex;
+    flex-direction: column-reverse;
+    width: 50px;
+    height: 50px;
+    align-items: center;
 }
 

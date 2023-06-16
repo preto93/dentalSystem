@@ -8,17 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <span id="logo">
-    <label>
+    <div class="logo-container">
         <i class="fa-solid fa-tooth"></i>
         <p>DentalSystem</p>
-        
-    </label>
-    </span>
+    </div>
     <section id="ingreso">
     <form>
         <i class="fa-solid fa-tooth"></i>
-        <h1 class="title">Login</h1>
+        <h2 class="title">Login</h2>
         <label>
             <i class="fa-solid fa-user"></i>
             <input placeholder="username" type="text" id="username">
@@ -32,18 +29,13 @@
         <button id="button">Nuevo usuario</button>
         
     </form>
-    <span id="redes">
-        <i class="fa-solid fa-tooth"></i>
-        <i class="fa-solid fa-tooth"></i>
-        <i class="fa-solid fa-tooth"></i>
-    </span>
     </section>
 
 
 <section id="nuevousuario">
     <form>
         <i class="fa-solid fa-tooth"></i>
-        <h1 class="title">NUEVO USUARIO</h1>
+        <h3 class="title">Nuevo usuario</h3>
         <label>
             <i class="fa-solid fa-user"></i>
             <input placeholder="username / email" type="text" id="username">
@@ -65,78 +57,113 @@
 
 
 <section id="home">
-    <label>
-        <i class="fa-solid fa-tooth"></i>
-        <p>DentalSystem</p>
-        
-    </label>
     <h1 class="title">HOME</h1>
-    <span>
+    <div id="homecontenedor">
         
     <button id="button">Registrar Turno</button>
     <button id="button">Odontologos</button>
     <button id="button">Pacientes</button>
-    </span>
+    </div>
 </section>
 
 <section id="turno">
-    <label>
-        <i class="fa-solid fa-tooth"></i>
-        <p>DentalSystem</p>
-        
-    </label>
     <h1 class="title">TURNOS</h1>
-    <span>
+    <div id ="turnoscontenedor">
         
     <button id="button">Asignar Paciente</button>
     <button id="button">Asignar Odontologo</button>
     <button id="button">Elegir fecha y hora</button>
     <button id="button">Confirmar turno</button>
-    </span>
+    </div>
 
 </section>
 
 <section id="odontologo">
-    <label>
-        <i class="fa-solid fa-tooth"></i>
-        <p>DentalSystem</p>
-        
-    </label>
-    <span>
-    <button id="button">Listar</button>
-    <button id="button">Agregar</button>
-    <button id="button">Modificar</button>
-    <button id="button">Eliminar</button>
-    </span>
+    <div id="box1">
 
-    <span>
-        <button id="button">Nombre</button>
-        <button id="button">Apellido</button>
-        <button id="button">Matricula</button>
-        </span>
+    <form id="newodontologo">
+        <h3>Agregar Odontologo</h2>
+        <input placeholder="Nombre" type="text" id="nombre">
+        <input placeholder="Apellido" type="text" id="apellido">
+        <input placeholder="Matricula" type="text" id="matricula">
+        <button id="button">Guardar</button>
+    </form>
+
+    <table id="tablaodontologos">
+        <tr>
+            <td>Nombre</td>
+            <td>Apellido</td>
+            <td>Matricula</td>
+        </tr>
+        <tr>
+           
+            <td>Dato 1</td>
+            <td>Dato 2</td>
+            <td>Dato 3</td>
+        </tr>
+        <tr>
+            
+            <td>Dato 4</td>
+            <td>Dato 5</td>
+            <td>Dato 6</td>
+            
+        </tr>
+    </table>
+
+    <div id="accionescont">
+        <i class="fa-solid fa-pen-to-square"></i>
+        <i class="fa-solid fa-delete-left"></i>
+
+
+    </div>
+
+</div>
+
+    
 
 </section>
 
 <section id="paciente">
-    <label>
-        <i class="fa-solid fa-tooth"></i>
-        <p>DentalSystem</p>
-        
-    </label>
-    <span>
-        <button id="button">Listar</button>
-        <button id="button">Agregar</button>
-        <button id="button">Modificar</button>
-        <button id="button">Eliminar</button>
-        </span>
+    <div id="box1">
+
+        <form id="newodontologo">
+            <h3>Agregar Paciente</h2>
+            <input placeholder="Nombre" type="text" id="nombre">
+            <input placeholder="Apellido" type="text" id="apellido">
+            <input placeholder="Dni" type="number" id="dni">
+            <input placeholder="Fecha de Alta" type="date" id="fechadealta">
+            <button id="button">Guardar</button>
+        </form>
     
-        <span>
-            <button id="button">Nombre</button>
-            <button id="button">Apellido</button>
-            <button id="button">DNI</button>
-            <button id="button">Domiiclio</button>
-            <button id="button">Fecha de alta</button>
-            </span>
+        <table id="tablaodontologos">
+            <tr>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Matricula</td>
+            </tr>
+            <tr>
+            
+                <td>Dato 1</td>
+                <td>Dato 2</td>
+                <td>Dato 3</td>
+            </tr>
+            <tr>
+                
+                <td>Dato 4</td>
+                <td>Dato 5</td>
+                <td>Dato 6</td>
+                
+            </tr>
+        </table>
+    
+        <div id="accionescont">
+            <i class="fa-solid fa-pen-to-square"></i>
+            <i class="fa-solid fa-delete-left"></i>
+    
+    
+        </div>
+    
+    </div>
 
 </section>
     
