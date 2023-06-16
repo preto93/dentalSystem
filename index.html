@@ -96,7 +96,7 @@
         <input placeholder="Nombre" type="text" id="nombre">
         <input placeholder="Apellido" type="text" id="apellido">
         <input placeholder="Matricula" type="text" id="matricula">
-        <button id="button">Guardar</button>
+        <button onclick="guardarElemento()"></i>Guardar</button>
     </form>
 
     <table id="tablaodontologos">
@@ -120,9 +120,11 @@
         </tr>
     </table>
 
-    <div id="accionescont">
-        <i class="fa-solid fa-pen-to-square"></i>
-        <i class="fa-solid fa-delete-left"></i>
+    <div id="actions">
+        <button onclick="modificarElemento()"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button onclick="eliminarElemento()"><i class="fa-solid fa-delete-left"></i></button>
+        
+        
 
 
     </div>
@@ -177,6 +179,7 @@
 
 </section>
     
-    <script src="main.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/actions.js"></script>
 </body>
 </html>
