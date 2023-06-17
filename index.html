@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./estilos/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -12,7 +12,8 @@
         <i class="fa-solid fa-tooth"></i>
         <p>DentalSystem</p>
     </div>
-    <section id="ingreso">
+    <section id="background">
+    <div id="ingreso">
     <form>
         <i class="fa-solid fa-tooth"></i>
         <h2 class="title">Login</h2>
@@ -25,15 +26,16 @@
             <input placeholder="password" type="password" id="password">
         </label>
         <a href="a" class="link">Forgot your password?</a>
-        <button id="button">Ingresar</button>
-        <button id="button">Nuevo usuario</button>
-        
+        <a href="#" id="ingreso"><button id="button">Ingresar</button></a>
+        <a href="#" id="newuser"><button id="button">Nuevo usuario</button></a>
     </form>
+
     <label id="redes">
         <i class="fa-brands fa-instagram"></i>
         <i class="fa-brands fa-facebook"></i>
         <i class="fa-brands fa-whatsapp"></i>
     </label>
+    </div>
     </section>
 
 
@@ -55,8 +57,8 @@
                 <option value="paciente">Paciente</option>
                 <option value="odontologo">Odontologo</option>
             </select>
-        <button id="button">Registrarse</button>
-        <button id="button">Volver al inicio</button>
+            <a href="#" id="registro"><button id="button">Registrarse</button></a>
+            <a href="#" id="backinicio" ><button id="button">Volver al inicio</button></a>
     </form>
     <label id="redes">
         <i class="fa-brands fa-instagram"></i>
@@ -169,8 +171,8 @@
         </table>
     
         <div id="accionescont">
-            <i class="fa-solid fa-pen-to-square"></i>
-            <i class="fa-solid fa-delete-left"></i>
+        <button onclick="modificarElemento()"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button onclick="eliminarElemento()"><i class="fa-solid fa-delete-left"></i></button>
     
     
         </div>
