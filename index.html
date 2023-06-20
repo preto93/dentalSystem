@@ -51,8 +51,9 @@
             <i class="fa-solid fa-key"></i>
             <input placeholder="password" type="password" id="password">
         </label>
-        <label for="roles">Seleccionar rol:</label>
-            <select id="roles" name="roles" multiple>
+        <label for="expandir">Seleccionar rol:</label>
+  <input type="checkbox" id="expandir" onchange="expandirSeleccion(this)">
+            <select id="seleccion" name="roles" multiple disabled>
                 <option value="admin">Admin</option>
                 <option value="paciente">Paciente</option>
                 <option value="odontologo">Odontologo</option>
