@@ -11,7 +11,9 @@ margin-bottom: 70px;
 }
 
 h1 {
+    color:#c20309;
     font-size: 45px;
+    text-align: center;
 }
 
 .logo-container {
@@ -36,9 +38,11 @@ h1 {
 }
 
 
-#background {
+#inicio {
     position: relative;
     background-image: url(..//img/dentalsystemhome.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
   
 
@@ -60,7 +64,6 @@ form {
     padding: 20px 25px;
     box-shadow: 0 5px 10px rgba(71, 3, 6, 0.7);
     align-items: center ;
-    margin-top: 120px;
 }
 
 form .title {
@@ -87,11 +90,13 @@ form label input {
     color: #252525;
     border-bottom: solid 1px #ce1d61;
     padding: 0 5px;
-    font-size: 15px;
+    font-size: 20px;
+    height: 40px;
 }
 
 form label input ::placeholder {
     color: #C25561;
+  
 }
 
 form .link {
@@ -108,7 +113,8 @@ button {
     cursor: pointer;
     font-size: 18px;
     border-radius: 25px;
-    width: 78%;
+    height: 50px;
+    width: 150px;
 }
 
 #redes {
@@ -124,7 +130,6 @@ button {
     display:  flex;
     flex-direction: column;
     align-items:  center;
-    justify-content: center;
     background-image: url(../img/dentalsystemhome.png);
 
 }
@@ -137,20 +142,64 @@ button {
     font-size: 25px;
 }
 
-#seleccion {
-    height: 50px; /* Altura inicial */
-    transition: height 0.3s ease; /* Transición suave */
+
+#button2 {
+    color: #fff;
+    border: none;
+    background: linear-gradient(to right, #cb232c, #291dce);
+    padding: 15px 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 25px;
+    height: 50px;
+    width: 170px;
+}
+
+  #toggleCheckbox {
+    display: none; /* Oculta el checkbox por defecto */
   }
   
-  #seleccion.expandido {
-    height: auto; /* Altura automática */
+  .toggle-label {
+    cursor: pointer; /* Cambia el cursor a un puntero al pasar por encima */
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #dropdownList {
+    display: none; /* Oculta las opciones por defecto */
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 0 0 5px 5px;
   }
 
+  
+  #dropdownList option{
+    padding: 10px;
+    list-style: none;
+    border: 1px solid #a40808;
+    }
+
+  #dropdownList li {
+    cursor: pointer;
+    margin-bottom: 5px; /* Espacio entre las opciones */
+  }
+
+  
+  #toggleCheckbox:checked ~ #dropdownList {
+    display: block; /* Muestra las opciones cuando el checkbox está marcado */
+  }
+
+  
 #home {
     display:  flex;
     flex-direction: column;
     align-items:  center;
     justify-content: center;
+    width: 100%;
     min-height: 100vh;
     background-image: url(../img/DentalSystemWireframe.png);
 }
@@ -186,6 +235,19 @@ button {
     
 }
 
+#okturno {
+    color: #fff;
+    border: none;
+    background: linear-gradient(to right, #cb232c, #291dce);
+    padding: 15px 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 25px;
+    height: 50px;
+    width: 170px;
+}
+
 #odontologo{
     display:  flex;
     flex-direction: column;
@@ -198,7 +260,7 @@ button {
 #box1{
     background: #726f6f;
     height: 70vh;
-    width: 120vh;
+    width: 150vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -208,7 +270,7 @@ button {
 #box1 button {
     color: #fff;
     border: none;
-    background: linear-gradient(to right, #cb232c, #ce1d61);
+    background: linear-gradient(to right, #cb232c, #291dce);
     padding: 15px 15px;
     margin-top: 20px;
     cursor: pointer;
@@ -221,6 +283,13 @@ button {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    font-size: 20px;
+    
+}
+
+#newodontologo input {
+    height: 30px;
+    text-align: center;
 }
 
 #paciente{
@@ -233,27 +302,60 @@ button {
 
 #accionescont{
     display: flex;
-    flex-direction: column-reverse;
-    width: 50px;
-    height: 50px;
+    flex-direction: row;
+    height: 200px;
+    width: 200px;
     align-items: center;
+    justify-content: space-evenly;
 }
+
+#accionescont button {
+    height: 50px;
+    width: 50px;
+}
+
 
 /* Dandole estilos a la tabla */
 
-table {
-    width: 70vh;
-    border-collapse: collapse;
-    background-color: #ec1111;
-    color: #333;
-    text-align: center;
-   
-    }
+#tabla{
+    width: 600px;
+    border: solid 1px rgba(255, 255, 255, 0.2);
+    background-color: #413e3e;
+    padding: 20px;
+}
 
-table td, th {
-    border: 1px solid #ccc;
-    padding: 8px;
-  }
+table {
+    color:#f0f0f0;
+    font-size: 14px;
+    table-layout: fixed;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+thead {
+    background-color: rgba(158, 16, 113, 0.4);
+}
+
+th{
+    padding: 20px 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 15px;
+    border-bottom: solid 1px rgba(205, 118, 240, 0.2);
+}
+
+tbody tr {
+    cursor: pointer;
+}
+
+tbody tr:hover {
+    background: #291dce;
+}
+
+
 
 
 

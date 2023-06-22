@@ -12,7 +12,7 @@
         <i class="fa-solid fa-tooth"></i>
         <p>DentalSystem</p>
     </div>
-    <section id="background">
+    <section id="inicio">
     <div id="ingreso">
     <form>
         <i class="fa-solid fa-tooth"></i>
@@ -26,7 +26,7 @@
             <input placeholder="password" type="password" id="password">
         </label>
         <a href="a" class="link">Forgot your password?</a>
-        <a href="#" id="ingreso"><button id="button">Ingresar</button></a>
+        <a href="#" id="ingresar"><button id="button2">Ingresar</button></a>
         <a href="#" id="newuser"><button id="button">Nuevo usuario</button></a>
     </form>
 
@@ -51,14 +51,16 @@
             <i class="fa-solid fa-key"></i>
             <input placeholder="password" type="password" id="password">
         </label>
-        <label for="expandir">Seleccionar rol:</label>
-  <input type="checkbox" id="expandir" onchange="expandirSeleccion(this)">
-            <select id="seleccion" name="roles" multiple disabled>
-                <option value="admin">Admin</option>
-                <option value="paciente">Paciente</option>
-                <option value="odontologo">Odontologo</option>
-            </select>
-            <a href="#" id="registro"><button id="button">Registrarse</button></a>
+
+        <label  id="rolbutton" for="toggleCheckbox" class="toggle-label">Seleccionar rol:</label>
+  <input type="checkbox" id="toggleCheckbox">
+  <div id="dropdownList">
+    <select>
+      <option value="admin">Admin</option>
+      <option value="user">Usuario</option>
+    </select>
+  </div>
+            <a href="#" id="registrarse"><button id="button2">Registrarse</button></a>
             <a href="#" id="backinicio" ><button id="button">Volver al inicio</button></a>
     </form>
     <label id="redes">
@@ -72,10 +74,9 @@
 <section id="home">
     <h1 class="title">HOME</h1>
     <div id="homecontenedor">
-        
-    <button id="button">Registrar Turno</button>
-    <button id="button">Odontologos</button>
-    <button id="button">Pacientes</button>
+    <button id="button">Registrar Turno<i class="fa-solid fa-plus"></i></button>
+    <button id="button">Odontologos<i class="fa-sharp fa-solid fa-screwdriver-wrench"></i></i></button>
+    <button id="button">Pacientes<i class="fa-solid fa-user-tie"></i></button>
     </div>
 </section>
 
@@ -86,7 +87,7 @@
     <button id="button">Asignar Paciente</button>
     <button id="button">Asignar Odontologo</button>
     <button id="button">Elegir fecha y hora</button>
-    <button id="button">Confirmar turno</button>
+    <button id="okturno">Confirmar turno</button>
     </div>
 
 </section>
@@ -99,33 +100,50 @@
         <input placeholder="Nombre" type="text" id="nombre">
         <input placeholder="Apellido" type="text" id="apellido">
         <input placeholder="Matricula" type="text" id="matricula">
-        <button onclick="guardarElemento()"></i>Guardar</button>
+        <button id="button" onclick="guardarElemento()"></i>Guardar</button>
     </form>
 
-    <table id="tablaodontologos">
+    <div id="tabla">
+        <table>
+        <thead>
         <tr>
-            <td>Nombre</td>
-            <td>Apellido</td>
-            <td>Matricula</td>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Matricula</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+           <td>Dato 1</td>
+           <td>Dato 1</td>
+           <td>Dato 1</td>    
         </tr>
         <tr>
-           
             <td>Dato 1</td>
-            <td>Dato 2</td>
-            <td>Dato 3</td>
-        </tr>
-        <tr>
-            
-            <td>Dato 4</td>
-            <td>Dato 5</td>
-            <td>Dato 6</td>
-            
-        </tr>
+            <td>Dato 1</td>
+            <td>Dato 1</td>    
+         </tr>
+         <tr>
+            <td>Dato 1</td>
+            <td>Dato 1</td>
+            <td>Dato 1</td>    
+         </tr>
+         <tr>
+            <td>Dato 1</td>
+            <td>Dato 1</td>
+            <td>Dato 1</td>    
+         </tr>
+         <tr>
+            <td>Dato 1</td>
+            <td>Dato 1</td>
+            <td>Dato 1</td>    
+         </tr>
     </table>
+    </div>
 
-    <div id="actions">
-        <button onclick="modificarElemento()"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button onclick="eliminarElemento()"><i class="fa-solid fa-delete-left"></i></button>
+    <div id="accionescont">
+        <button id="botonmod" onclick="modificarElemento()"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button id="elementoEliminar" onclick="eliminarElemento()"><i class="fa-solid fa-delete-left"></i></button>
         
         
 
@@ -150,30 +168,53 @@
             <button id="button">Guardar</button>
         </form>
     
-        <table id="tablaodontologos">
+        <div id="tabla">
+            <table>
+            <thead>
             <tr>
-                <td>Nombre</td>
-                <td>Apellido</td>
-                <td>Matricula</td>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>DNI</th>
+                <th>Fecha de Alta</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+               <td>Dato 1</td>
+               <td>Dato 1</td>
+               <td>Dato 1</td>
+               <td id = "fecha1">Dato 1</td>    
             </tr>
             <tr>
-            
                 <td>Dato 1</td>
-                <td>Dato 2</td>
-                <td>Dato 3</td>
-            </tr>
-            <tr>
-                
-                <td>Dato 4</td>
-                <td>Dato 5</td>
-                <td>Dato 6</td>
-                
-            </tr>
+                <td>Dato 1</td>
+                <td>Dato 1</td>
+                <td id = "fecha2">Dato 1 </td>       
+             </tr>
+             <tr>
+                <td>Dato 1</td>
+                <td>Dato 1</td>   
+                <td>Dato 1</td>
+                <td id = "fecha3">Dato 1</td>    
+             </tr>
+             <tr>
+                <td>Dato 1</td>
+                <td>Dato 1</td>
+                <td>Dato 1</td>
+                <td id = "fecha4">Dato 1</td>      
+             </tr>
+             <tr>
+                <td>Dato 1</td>
+                <td>Dato 1</td>
+                <td>Dato 1</td>
+                <td id = "fecha5">Dato 1</td>      
+             </tr>
         </table>
+        </div>
     
         <div id="accionescont">
         <button onclick="modificarElemento()"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button onclick="eliminarElemento()"><i class="fa-solid fa-delete-left"></i></button>
+        <button id="elementoEliminar" onclick="eliminarElemento()"><i class="fa-solid fa-delete-left"></i></button>
     
     
         </div>
