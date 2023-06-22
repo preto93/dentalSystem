@@ -40,8 +40,8 @@ document.getElementById("newuser").addEventListener("click", function(event) {
 
 
   // Acciones de tablas > odontologos/pacientes, agregar, eliminar, editar
-  function modificarElemento()
-    var div = document.getElementById('actions');
+  function modificarElemento() {
+    var div = document.getElementById();
     var nuevoElemento = document.createElement('p');
     nuevoElemento.innerHTML = 'Nuevo elemento agregado';
     div.appendChild(nuevoElemento);
@@ -75,3 +75,26 @@ const okturnos = document.getElementById('okturno');
 okturnos.addEventListener('click', function(event) {
   alert('El turno se ha reservado con éxito');
 });
+
+
+function vaciarFormulario() {
+  document.getElementById("username2").value = "";
+  document.getElementById("password2").value = "";
+  document.getElementById("roles").selectedIndex = -1;
+}
+
+// Guardando nuevo usuario 
+function guardarAccion() {
+  var usuario = document.getElementById("username2").value;
+  var pw = document.getElementById("password2").value;
+  var rol = Array.from(document.getElementById("roles").selectedOptions).map(option => option.value);
+
+
+// Realizar las acciones correspondientes con los datos obtenidos
+console.log("Nombre:", usuario);
+console.log("Password:", pw);
+console.log("Rol:", rol);
+
+vaciarFormulario();
+}
+

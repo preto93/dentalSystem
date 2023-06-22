@@ -15,14 +15,13 @@
     <section id="inicio">
     <div id="ingreso">
     <form>
-        <i class="fa-solid fa-tooth"></i>
         <h2 class="title">Login</h2>
         <label>
-            <i class="fa-solid fa-user"></i>
+            <i id="icono" class="fa-solid fa-user"></i>
             <input placeholder="username" type="text" id="username">
         </label>
         <label>
-            <i class="fa-solid fa-key"></i>
+            <i id="icono" class="fa-solid fa-key"></i>
             <input placeholder="password" type="password" id="password">
         </label>
         <a href="a" class="link">Forgot your password?</a>
@@ -31,9 +30,9 @@
     </form>
 
     <label id="redes">
-        <i class="fa-brands fa-instagram"></i>
-        <i class="fa-brands fa-facebook"></i>
-        <i class="fa-brands fa-whatsapp"></i>
+        <a href="https://www.instagram.com" target="_blank" class="fa-brands fa-instagram"></a>
+        <a href="https://www.facebook.com" target="_blank" class="fa-brands fa-facebook"></a>
+        <a href="https://www.whatsapp.com" target="_blank" class="fa-brands fa-whatsapp"></a>
     </label>
     </div>
     </section>
@@ -41,32 +40,31 @@
 
 <section id="nuevousuario">
     <form>
-        <i class="fa-solid fa-tooth"></i>
         <h3 class="title">Nuevo usuario</h3>
         <label>
-            <i class="fa-solid fa-user"></i>
-            <input placeholder="username / email" type="text" id="username">
+            <i  id="icono" class="fa-solid fa-user"></i>
+            <input placeholder="username / email" type="text" id="username2">
         </label>
         <label>
-            <i class="fa-solid fa-key"></i>
-            <input placeholder="password" type="password" id="password">
+            <i id="icono" class="fa-solid fa-key"></i>
+            <input placeholder="password" type="password" id="password2">
         </label>
 
         <label  id="rolbutton" for="toggleCheckbox" class="toggle-label">Seleccionar rol:</label>
   <input type="checkbox" id="toggleCheckbox">
   <div id="dropdownList">
-    <select>
+    <select id="roles">
       <option value="admin">Admin</option>
       <option value="user">Usuario</option>
     </select>
   </div>
-            <a href="#" id="registrarse"><button id="button2">Registrarse</button></a>
+            <a href="#" id="registrarse"><button id="button2" onclick="guardarAccion()">Registrarse</button></a>
             <a href="#" id="backinicio" ><button id="button">Volver al inicio</button></a>
     </form>
     <label id="redes">
-        <i class="fa-brands fa-instagram"></i>
-        <i class="fa-brands fa-facebook"></i>
-        <i class="fa-brands fa-whatsapp"></i>
+        <a href="https://www.instagram.com" target="_blank" class="fa-brands fa-instagram"></a>
+        <a href="https://www.facebook.com" target="_blank" class="fa-brands fa-facebook"></a>
+        <a href="https://www.whatsapp.com" target="_blank" class="fa-brands fa-whatsapp"></a>
     </label>
 </section>
 
@@ -74,9 +72,9 @@
 <section id="home">
     <h1 class="title">HOME</h1>
     <div id="homecontenedor">
-    <button id="button">Registrar Turno<i class="fa-solid fa-plus"></i></button>
-    <button id="button">Odontologos<i class="fa-sharp fa-solid fa-screwdriver-wrench"></i></i></button>
-    <button id="button">Pacientes<i class="fa-solid fa-user-tie"></i></button>
+    <button id="buttonturno">Registrar Turno<i class="fa-solid fa-plus"></i></button>
+    <button id="buttonturno">Odontologos<i class="fa-sharp fa-solid fa-screwdriver-wrench"></i></i></button>
+    <button id="buttonturno">Pacientes<i class="fa-solid fa-user-tie"></i></button>
     </div>
 </section>
 
@@ -145,9 +143,6 @@
         <button id="botonmod" onclick="modificarElemento()"><i class="fa-solid fa-pen-to-square"></i></button>
         <button id="elementoEliminar" onclick="eliminarElemento()"><i class="fa-solid fa-delete-left"></i></button>
         
-        
-
-
     </div>
 
 </div>
