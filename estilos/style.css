@@ -395,7 +395,7 @@ button {
     display:  flex;
     align-items:  center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 120vh;
     background-image: url(../img/4.png);
     background-repeat: round;
 }
@@ -576,6 +576,11 @@ tbody tr.seleccionado {
 
     }
 
+    #box1 button {
+        font-size: 15px;
+        padding: 5px;
+    }
+
     #accionescont{
         margin-bottom: 20px;
     }
@@ -597,18 +602,24 @@ tbody tr.seleccionado {
 }
 
 #paciente {
-    height: 120vh;
+    height: 140vh;
 }
 
 #box2{
-    margin-top: 20px;
+    margin-top: none;
     display: flex;
-    height: 110vh;
-    width: 40vh;
+    height: 130vh;
+    width: 60vh;
     flex-direction: column;
 
 }
 
+#box2 button {
+    
+font-size: 15px;
+padding: 5px;
+    
+}
 
 #newpaciente{
     width: 25vh;
