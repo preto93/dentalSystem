@@ -15,6 +15,7 @@ document.getElementById("newuser").addEventListener("click", function(event) {
     // Enviando al usuario al HOME
     window.location.href = "#home";
     console.log("Bienvenido @Usuario");
+    alert("Bienvenido @Usuario");
   });
 
 
@@ -27,6 +28,7 @@ document.getElementById("newuser").addEventListener("click", function(event) {
     // Pagina a redirecccionar al usuario > Home
     window.location.href = "#home";
     console.log("Bienvenido @User, gracias por registrarse");
+    alert("Bienvenido @User, gracias por registrarse");
   });
 
   document.getElementById("backinicio").addEventListener("click", function(event) {
@@ -38,28 +40,6 @@ document.getElementById("newuser").addEventListener("click", function(event) {
     alert('Redireccionando al inicio');
   });
 
-
-  // Acciones de tablas > odontologos/pacientes, agregar, eliminar, editar
-  function modificarElemento() {
-    var div = document.getElementById();
-    var nuevoElemento = document.createElement('p');
-    nuevoElemento.innerHTML = 'Nuevo elemento agregado';
-    div.appendChild(nuevoElemento);
-}
-
-// Función para eliminar un elemento
-function eliminarElemento() {
-    var elementoEliminar = document.getElementById('elementoEliminar');
-    var padre = elementoEliminar.parentNode;
-    padre.removeChild(elementoEliminar);
-    alert('Elemento eliminado correctamente');
-}
-
-// Función para modificar un elemento
-function modificarElemento() {
-    var elementoModificar = document.getElementById('elementoModificar');
-    elementoModificar.innerHTML = 'Elemento modificado';
-}
 
 // Desplegable Menu
 
@@ -97,4 +77,34 @@ console.log("Rol:", rol);
 
 vaciarFormulario();
 }
+
+
+// Acciones del HOME 
+// Turnos
+document.getElementById("buttonturno").addEventListener("click", function(event) {
+  // Evita el comportamiento predeterminado del enlace
+  event.preventDefault();
+  
+  // Pagina a redirecccionar al usuario
+  window.location.href = "#turno";
+});
+
+//Odontologos
+document.getElementById("buttonodontologo").addEventListener("click", function(event) {
+  // Evita el comportamiento predeterminado del enlace
+  event.preventDefault();
+  
+  // Pagina a redirecccionar al usuario
+  window.location.href = "#odontologo";
+});
+
+//Paciente
+document.getElementById("buttonpaciente").addEventListener("click", function(event) {
+  // Evita el comportamiento predeterminado del enlace
+  event.preventDefault();
+  
+  // Pagina a redirecccionar al usuario
+  window.location.href = "#paciente";
+});
+
 

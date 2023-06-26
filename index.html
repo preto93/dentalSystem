@@ -24,7 +24,7 @@
             <i id="icono" class="fa-solid fa-key"></i>
             <input placeholder="password" type="password" id="password">
         </label>
-        <a href="a" class="link">Forgot your password?</a>
+        <a href="a" class="link">Te olvidaste la contraseña?</a>
         <a href="#" id="ingresar"><button id="button2">Ingresar</button></a>
         <a href="#" id="newuser"><button id="button">Nuevo usuario</button></a>
     </form>
@@ -72,22 +72,24 @@
 <section id="home">
     <h1 class="title">HOME</h1>
     <div id="homecontenedor">
-    <button id="buttonturno">Registrar Turno<i class="fa-solid fa-plus"></i></button>
-    <button id="buttonturno">Odontologos<i class="fa-sharp fa-solid fa-screwdriver-wrench"></i></i></button>
-    <button id="buttonturno">Pacientes<i class="fa-solid fa-user-tie"></i></button>
+        <a href="#" id="buttonturno"><button id="buttonturno">Registrar Turno<i class="fa-solid fa-plus"></i></button></a>
+        <a href="#" id="buttonodontologo"><button id="buttonodontologo">Odontologos<i class="fa-sharp fa-solid fa-screwdriver-wrench"></i></i></button></a>
+        <a href="#" id="buttonpaciente"><button id="buttonpaciente">Pacientes<i class="fa-solid fa-user-tie"></i></button></a>
     </div>
 </section>
 
 <section id="turno">
     <h1 class="title">TURNOS</h1>
     <div id ="turnoscontenedor">
-        
-    <button id="button">Asignar Paciente</button>
-    <button id="button">Asignar Odontologo</button>
-    <button id="button">Elegir fecha y hora</button>
+    <div id="botonesturnos">
+    <button id="button3">Asignar Paciente</button>
+    <button id="button3">Asignar Odontologo</button>
+    <button id="button3">Elegir fecha y hora</button>
+    </div>
+    <div id="botonconfirmar">
     <button id="okturno">Confirmar turno</button>
     </div>
-
+    </div>
 </section>
 
 <section id="odontologo">
@@ -140,8 +142,8 @@
     </div>
 
     <div id="accionescont">
-        <button id="botonmod" onclick="modificarElemento()"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button id="elementoEliminar" onclick="eliminarElemento()"><i class="fa-solid fa-delete-left"></i></button>
+        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="eliminar"><i class="fa-solid fa-delete-left"></i></button>
         
     </div>
 
@@ -208,8 +210,8 @@
         </div>
     
         <div id="accionescont">
-        <button onclick="modificarElemento()"><i class="fa-solid fa-pen-to-square"></i></button>
-        <button id="elementoEliminar" onclick="eliminarElemento()"><i class="fa-solid fa-delete-left"></i></button>
+        <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="eliminar"><i class="fa-solid fa-delete-left"></i></button>
     
     
         </div>
