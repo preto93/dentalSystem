@@ -1,3 +1,23 @@
+// Desplegable Menu ROL
+
+const toggleCheckbox = document.getElementById('toggleCheckbox');
+
+toggleCheckbox.addEventListener('change', function() {
+});
+
+// Seleccionar Rol
+function expandirSeleccion(checkbox) {
+  var seleccion = document.getElementById("seleccion");
+  
+  if (checkbox.checked) {
+    seleccion.removeAttribute("disabled");
+    seleccion.classList.add("expandido");
+  } else {
+    seleccion.setAttribute("disabled", "disabled");
+    seleccion.classList.remove("expandido");
+  }
+}
+
 //>>>>>Acciones dentro de nuevo usuario><<<
 document.getElementById("registrarse").addEventListener("click", function(event) {
     // Evita el comportamiento predeterminado del enlace

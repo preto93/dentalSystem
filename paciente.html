@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./estilos/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <section id="paciente">
+        <div id="box2">
+    
+            <form id="newpaciente">
+                <h3>Agregar Paciente</h2>
+                <input placeholder="Nombre" type="text" id="nombre">
+                <input placeholder="Apellido" type="text" id="apellido">
+                <input placeholder="Dni" type="number" id="dni">
+                <input placeholder="Fecha de Alta" type="date" id="fechadealta">
+                <button id="button">Guardar</button>
+            </form>
+        
+            <div id="tabla">
+                <table>
+                <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>DNI</th>
+                    <th>Fecha de Alta</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                   <td>Dato 1</td>
+                   <td>Dato 1</td>
+                   <td>Dato 1</td>
+                   <td id = "fecha1">Dato 1</td>    
+                </tr>
+                <tr>
+                    <td>Dato 1</td>
+                    <td>Dato 1</td>
+                    <td>Dato 1</td>
+                    <td id = "fecha2">Dato 1 </td>       
+                 </tr>
+                 <tr>
+                    <td>Dato 1</td>
+                    <td>Dato 1</td>   
+                    <td>Dato 1</td>
+                    <td id = "fecha3">Dato 1</td>    
+                 </tr>
+                 <tr>
+                    <td>Dato 1</td>
+                    <td>Dato 1</td>
+                    <td>Dato 1</td>
+                    <td id = "fecha4">Dato 1</td>      
+                 </tr>
+                 <tr>
+                    <td>Dato 1</td>
+                    <td>Dato 1</td>
+                    <td>Dato 1</td>
+                    <td id = "fecha5">Dato 1</td>      
+                 </tr>
+            </table>
+            </div>
+        
+            <div id="accionescont">
+            <button class="editar"><i class="fa-solid fa-pen-to-square"></i></button>
+            <button class="eliminar"><i class="fa-solid fa-delete-left"></i></button>
+        
+        
+            </div>
+        
+        </div>
+    
+    </section>
+    <script src="./js/paciente.js"></script>
+</body>
+</html>
