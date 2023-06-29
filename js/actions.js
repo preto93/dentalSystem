@@ -20,26 +20,7 @@ document.getElementById("newuser").addEventListener("click", function(event) {
 
 
 
-  //>>>>>Acciones dentro de nuevo usuario><<<
-  document.getElementById("registrarse").addEventListener("click", function(event) {
-    // Evita el comportamiento predeterminado del enlace
-    event.preventDefault();
-    
-    // Pagina a redirecccionar al usuario > Home
-    window.location.href = "#home";
-    console.log("Bienvenido @User, gracias por registrarse");
-    alert("Bienvenido @User, gracias por registrarse");
-  });
-
-  document.getElementById("backinicio").addEventListener("click", function(event) {
-    // Evita el comportamiento predeterminado del enlace
-    event.preventDefault();
-    
-    // Pagina a redirecccionar al usuario > INICIO
-    window.location.href = "#inicio";
-    alert('Redireccionando al inicio');
-  });
-
+  
 
 // Desplegable Menu
 
@@ -63,20 +44,6 @@ function vaciarFormulario() {
   document.getElementById("roles").selectedIndex = -1;
 }
 
-// Guardando nuevo usuario 
-function guardarAccion() {
-  var usuario = document.getElementById("username2").value;
-  var pw = document.getElementById("password2").value;
-  var rol = Array.from(document.getElementById("roles").selectedOptions).map(option => option.value);
-
-
-// Realizar las acciones correspondientes con los datos obtenidos
-console.log("Nombre:", usuario);
-console.log("Password:", pw);
-console.log("Rol:", rol);
-
-vaciarFormulario();
-}
 
 
 // Acciones del HOME 
