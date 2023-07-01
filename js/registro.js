@@ -26,7 +26,7 @@ document.getElementById("registrarse").addEventListener("click", function(event)
     guardarAccion ();
 
     // Pagina a redirecccionar al usuario > Home
-    window.location.href = "#home";
+    window.location.href = "/home.html";
     console.log("Bienvenido @User, gracias por registrarse");
     alert("Bienvenido @User, gracias por registrarse");
   });
@@ -73,3 +73,4 @@ fetch(url, options)
     console.error(error); 
   });
 }
+

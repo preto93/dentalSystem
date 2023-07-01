@@ -5,7 +5,7 @@ document.getElementById("buttonturno").addEventListener("click", function(event)
     event.preventDefault();
     
     // Pagina a redirecccionar al usuario
-    window.location.href = "#turno";
+    window.location.href = "/turno.html";
   });
   
   //Odontologos
@@ -14,7 +14,7 @@ document.getElementById("buttonturno").addEventListener("click", function(event)
     event.preventDefault();
     
     // Pagina a redirecccionar al usuario
-    window.location.href = "#odontologo";
+    window.location.href = "/odontologo.html";
   });
   
   //Paciente
@@ -23,7 +23,6 @@ document.getElementById("buttonturno").addEventListener("click", function(event)
     event.preventDefault();
     
     // Pagina a redirecccionar al usuario
-    window.location.href = "#paciente";
+    window.location.href = "/paciente.html";
   });
-  
   
