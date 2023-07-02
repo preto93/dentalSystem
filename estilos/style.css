@@ -210,6 +210,18 @@ button {
     padding-bottom: 20px;
 }
 
+#toggleCheckboxRol {
+    display: none; /* Oculta el checkbox por defecto */
+  }
+  
+  .toggle-labelRol {
+    cursor: pointer; /* Cambia el cursor a un puntero al pasar por encima */
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
   #toggleCheckboxPacientes {
     display: none; /* Oculta el checkbox por defecto */
   }
@@ -246,7 +258,25 @@ button {
     border-radius: 5px;
   }
 
+  #roles {
+    display: none; /* Oculta las opciones por defecto */
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 0 0 5px 5px;
+  }
 
+  
+  #roles option{
+    padding: 10px;
+    list-style: none;
+    border: 1px solid #a40808;
+    }
+
+  #roles li {
+    cursor: pointer;
+    margin-bottom: 5px; /* Espacio entre las opciones */
+  }
   
   #listadopacientes {
     display: none; /* Oculta las opciones por defecto */
@@ -305,7 +335,11 @@ button {
     }
 
     
+    #toggleCheckboxRol:checked ~ #roles {
+        display: block; /* Muestra las opciones cuando el checkbox está marcado */
+      }
 
+      
   #toggleCheckboxPacientes:checked ~ #listadopacientes {
     display: block; /* Muestra las opciones cuando el checkbox está marcado */
   }
@@ -318,6 +352,7 @@ button {
     display: block; /* Muestra las opciones cuando el checkbox está marcado */
   }
 
+  
 
 
 #home {
