@@ -261,7 +261,7 @@ button {
   #roles {
     display: none; /* Oculta las opciones por defecto */
     padding: 5px 10px;
-    background-color: #f0f0f0;
+    background-color: #c717df;
     border: 1px solid #ccc;
     border-radius: 0 0 5px 5px;
   }
@@ -281,7 +281,7 @@ button {
   #listadopacientes {
     display: none; /* Oculta las opciones por defecto */
     padding: 5px 10px;
-    background-color: #f0f0f0;
+    background-color: #c717df;
     border: 1px solid #ccc;
     border-radius: 0 0 5px 5px;
   }
@@ -301,7 +301,7 @@ button {
   #listadoOdontologos {
     display: none; /* Oculta las opciones por defecto */
     padding: 5px 10px;
-    background-color: #d42222;
+    background-color: #c717df;
     border: 1px solid #ccc;
     border-radius: 0 0 5px 5px;
   }
@@ -310,7 +310,6 @@ button {
   #listadoOdontologos option{
     padding: 10px;
     list-style: none;
-    border: 1px solid #a40808;
     }
 
     #fechasDisponibles {
@@ -323,13 +322,11 @@ button {
       }
     
       
-    
 
 
     #fechasDisponibles option {
             padding: 10px;
             list-style: none;
-            border: 1px solid #a40808;
             text-align: center;
             
     }
@@ -353,7 +350,15 @@ button {
   }
 
   
-
+ #opciones{
+    background-color: #b77fb1;
+    font-size: 13px;
+    text-align: center;
+    text-decoration: solid;
+    border-radius: 2px;
+    padding: 5px;
+    font-weight: bold;
+ }
 
 #home {
     display:  flex;
