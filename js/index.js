@@ -34,7 +34,7 @@ function guardarAccion() {
 
   console.log(body);
 
-  const url = "https://dentalsystem-production.up.railway.app/api/v1/usuario/registrar";
+  const url = "https://dentalsystem-production.up.railway.app/api/v1/usuario/login";
   const options = {
       method: 'POST',
       headers: {
@@ -45,8 +45,16 @@ body: JSON.stringify(body)
 
 
 fetch(url, options)
+.then(response => response.json())
 .then(response => {
-  console.log(response.json());
+  console.log(response);
+      if(response.jwt){
+          localStorage.setItem('jwt', JSON.stringify(response.jwt) );
+          location.replace('home.html');
+      } else {
+          alert('Ups tenemos un error '+ response);
+
+      };
 })
   .catch(error => {
   console.error(error); 

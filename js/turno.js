@@ -1,3 +1,29 @@
+document.addEventListener('DOMContentLoaded', function() {
+  let jwt = localStorage.getItem("jwt");
+  const url = "https://dentalsystem-production.up.railway.app/api/v1/paciente/todos";
+  const options = {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer '+ jwt
+    }
+  };
+
+  fetch(url, options)
+    .then(response => response.json())
+    .then(data => {
+      const pacientes = document.getElementById('listadopacientes');
+      pacientes.innerHTML = '';
+      data.array.forEach(p => {
+        listadopacientes.innerHTML +=` <option value="${p.id}">${p.nombre} ${p.apellido}</option>`
+        
+      })
+      console.log(data);
+    })
+    .catch(error => {
+      console.error(error);
+    });
+});
 
 const okturnos = document.getElementById('okturno');
 
@@ -11,9 +37,19 @@ okturnos.addEventListener('click', function(event) {
 });
 
 function guardarAccion(paciente, odontologo, fecha) {
+  console.log(paciente, odontologo);
+  
+  const pacienteO= {
+      id : paciente.id
+  };
+
+  const odontologoO = {
+    id : odontologo.id
+  };
+
   const body = {
-    paciente: paciente,
-    odontologo: odontologo,
+    paciente: pacienteO,
+    odontologo: odontologoO,
     fecha: fecha
   };
 
