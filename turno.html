@@ -12,9 +12,27 @@
         <h1 class="title">TURNOS</h1>
         <div id ="turnoscontenedor">
         <div id="botonesturnos">
-        <button id="button3">Asignar Paciente</button>
-        <button id="button3">Asignar Odontologo</button>
-        <button id="button3">Elegir fecha y hora</button>
+        <label  id="button3" for="toggleCheckboxPacientes" class="toggle-labelPacientes">Asignar paciente</label>
+      <input type="checkbox" id="toggleCheckboxPacientes">
+      <div id="listadopacientes">
+        <select>
+          <option value="">Paciente2</option>
+          <option value="">Paciente1</option>
+        </select>
+      </div>
+      <label  id="button3" for="toggleCheckboxOdontologos" class="toggle-labelOdontologos">Asignar odontologo</label>
+      <input type="checkbox" id="toggleCheckboxOdontologos">
+      <div id="listadoOdontologos">
+        <select>
+          <option value="">Odontologo1</option>
+          <option value="">Odontologo2</option>
+        </select>
+      </div>
+      
+        <label  id="button3" for="toggleCheckboxFecha" class="toggle-labelFecha">Elegir fecha y hora</label>
+        <input type="checkbox" id="toggleCheckboxFecha">
+        <input id="fechasDisponibles"  type="date" value="">
+        </div>
         </div>
         <div id="botonconfirmar">
         <button id="okturno">Confirmar turno</button>

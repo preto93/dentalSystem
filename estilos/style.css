@@ -210,19 +210,45 @@ button {
     padding-bottom: 20px;
 }
 
-  #toggleCheckbox {
+  #toggleCheckboxPacientes {
     display: none; /* Oculta el checkbox por defecto */
   }
   
-  .toggle-label {
+  .toggle-labelPacientes {
     cursor: pointer; /* Cambia el cursor a un puntero al pasar por encima */
     padding: 5px 10px;
     background-color: #f0f0f0;
     border: 1px solid #ccc;
     border-radius: 5px;
   }
+
+  #toggleCheckboxOdontologos {
+    display: none; /* Oculta el checkbox por defecto */
+  }
   
-  #dropdownList {
+  .toggle-labelOdontologos {
+    cursor: pointer; /* Cambia el cursor a un puntero al pasar por encima */
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  #toggleCheckboxFecha {
+    display: none; /* Oculta el checkbox por defecto */
+  }
+  
+  .toggle-labelFecha {
+    cursor: pointer; /* Cambia el cursor a un puntero al pasar por encima */
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+
+  
+  #listadopacientes {
     display: none; /* Oculta las opciones por defecto */
     padding: 5px 10px;
     background-color: #f0f0f0;
@@ -231,23 +257,69 @@ button {
   }
 
   
-  #dropdownList option{
+  #listadopacientes option{
     padding: 10px;
     list-style: none;
     border: 1px solid #a40808;
     }
 
-  #dropdownList li {
+  #listadopacientes li {
     cursor: pointer;
     margin-bottom: 5px; /* Espacio entre las opciones */
   }
 
-  
-  #toggleCheckbox:checked ~ #dropdownList {
+  #listadoOdontologos {
+    display: none; /* Oculta las opciones por defecto */
+    padding: 5px 10px;
+    background-color: #d42222;
+    border: 1px solid #ccc;
+    border-radius: 0 0 5px 5px;
+  }
+
+
+  #listadoOdontologos option{
+    padding: 10px;
+    list-style: none;
+    border: 1px solid #a40808;
+    }
+
+    #fechasDisponibles {
+        display: none; /* Oculta las opciones por defecto */
+        padding: 5px 10px;
+        background-color: #da83f5;
+        border: 1px solid #ccc;
+        border-radius: 0 0 5px 5px;
+        text-align: center;
+      }
+    
+      
+    
+
+
+    #fechasDisponibles option {
+            padding: 10px;
+            list-style: none;
+            border: 1px solid #a40808;
+            text-align: center;
+            
+    }
+
+    
+
+  #toggleCheckboxPacientes:checked ~ #listadopacientes {
     display: block; /* Muestra las opciones cuando el checkbox está marcado */
   }
 
-  
+  #toggleCheckboxOdontologos:checked ~ #listadoOdontologos {
+    display: block; /* Muestra las opciones cuando el checkbox está marcado */
+  }
+
+  #toggleCheckboxFecha:checked ~ #fechasDisponibles {
+    display: block; /* Muestra las opciones cuando el checkbox está marcado */
+  }
+
+
+
 #home {
     display:  flex;
     flex-direction: column;
@@ -340,11 +412,13 @@ button {
 
 #botonesturnos{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
+    height: 600px;
     justify-content: space-around;
     margin-top: 40px;
     text-align: center;
+    justify-content: space-around;
 }
 
 #botonconfirmar{
@@ -352,6 +426,7 @@ button {
     justify-content: center;
     flex-direction: row-reverse;
     margin-bottom: 50px;
+    padding-top: 120px;
 }
 
 #okturno {
