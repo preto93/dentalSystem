@@ -4,27 +4,26 @@ const form = document.querySelector('form');
 form.addEventListener('submit', function (event) {
   event.preventDefault();
   console.info('✉');
-  //const nombre =  document.getElementById("username2").value
-  //const apellido = normalizarTexto( inputApellido.value );
-  const username =  document.getElementById("username2").value
-  //const email = document.getElementById;
+
+  const username =  document.getElementById("username2").value;
   const password1 = document.getElementById("password1").value;
   const password2 = document.getElementById("password2").value;
+  const rol = document.getElementById('role').value;
 
-  var rol = Array.from(document.getElementById("roles").selectedOptions).map(option => option.value);
-  
+  if(rol ===""){
+    alert('Debe seleccionar una opción.');
+    return;
+  }
 
-  if ( !compararContrasenias( password1, password2 )){
+  if (!compararContrasenias( password1, password2 )){
       alert('Las contraseñas No son iguales');
       return;
   }
 
   const datos = {
-     // nombre: nombre,
-    //  apellido: apellido,
       username: username,
       email: null,
-      rol: rol[0],
+      rol: rol,
       password: password1
   }
 
@@ -60,7 +59,7 @@ function realizarRegister(datos) {
   }).then( respuestaJSON => {
       console.log(respuestaJSON);
       if( respuestaJSON.jwt){
-          localStorage.setItem('jwt', JSON.stringify(respuestaJSON.jwt) );
+          localStorage.setItem('jwt', respuestaJSON.jwt );
           location.replace('home.html');
 
       } else {

@@ -7,9 +7,8 @@ document.getElementById("button2").addEventListener("click", function(event) {
   
   guardarAccion ();
 
-  console.log("Bienvenido @Usuario");
-  alert("Bienvenido @Usuario");
-  window.location.href = "/home.html";
+  
+ 
 });
 
 // Acciones opción Nuevo usuaurio
@@ -28,8 +27,8 @@ function guardarAccion() {
   var password = document.getElementById("password").value;
   
   const body = {
-      usuario : username, 
-      pw : password 
+      username : username, 
+      password : password 
   }
 
   console.log(body);
@@ -47,10 +46,13 @@ body: JSON.stringify(body)
 fetch(url, options)
 .then(response => response.json())
 .then(response => {
-  console.log(response);
+ // console.log(response);
       if(response.jwt){
-          localStorage.setItem('jwt', JSON.stringify(response.jwt) );
-          location.replace('home.html');
+          alert("Bienvenido @"+username)
+          console.log(response.jwt);
+          localStorage.setItem('jwt', response.jwt );
+          //location.replace('home.html');
+          window.location.href = "/home.html";
       } else {
           alert('Ups tenemos un error '+ response);
 
