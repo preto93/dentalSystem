@@ -21,7 +21,7 @@
     <!-- <section id="paciente">-->
     <section id="paciente">
         <a href="home.html" class="regresar"><i class="fa-solid fa-circle-arrow-left"></i>Volver</a>
-        <div  class="container d-flex flex-column align-items-center gap-4">
+        <div  id ="tablaContenedor" class="container d-flex flex-column align-items-center gap-4">
 
             <form>
                 <div class="row">
@@ -56,7 +56,7 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <label for="localidad" class="form-label">Localida</label>
+                        <label for="localidad" class="form-label">Localidad</label>
                         <input type="text" class="form-control" id="localidad" required >
                     </div>
                     <div class="col">
@@ -64,7 +64,7 @@
                         <input type="text" class="form-control" id="provincia">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary" style="margin: 1rem;">Submit</button>
+                <button type="submit" class="btn btn-primary" style="margin: 1rem;">Guardar</button>
             </form>
             <table id="bodyTabla" class="table">
                 <thead>

@@ -1,47 +1,167 @@
+const bodyTabla = document.getElementById("tBody");
+const form = document.querySelector("form");
+const jwt = localStorage.getItem("jwt");
+console.log(jwt.toString());
+let odontologos = [];
 
-//>>>>>Acciones dentro de Odontologo><<<
+document.addEventListener('DOMContentLoaded', function (event) {
 
-document.getElementById("button").addEventListener("click", function(event) {
-  // Evita el comportamiento predeterminado del enlace
-  event.preventDefault();
-  
-  guardarAccion();
-
-  alert("El odontologo ha sido agregado correctamente");
-});
-
-// Guardando nuevo odontologo 
-function guardarAccion() {
-
-  var nombre = document.getElementById("nombre").value;
-  var apellido = document.getElementById("apellido").value;
-  var matricula = document.getElementById("matricula").value;
-  
-  const body = {
-      name : nombre, 
-      surname : apellido, 
-      nroMatricula : matricula
+  //chequear endpoint
+  const endpoint1 = 'https://dentalsystem-production.up.railway.app/api/v1/odontologo/todos';
+  const settings = {
+    method: 'GET',
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+      'Authorization': "Bearer " + jwt
+    }
   }
 
-  console.log(body);
+  fetch(endpoint1, settings)
+    .then(response => response.json())
+    .then(response => {
+      console.log(response);
+      bodyTabla.innerHTML = '';
+      response.forEach(odontologo => {
+        bodyTabla.innerHTML +=
+        `<tr>
+        <td>${odontologo.nombre}</td>
+        <td>${odontologo.apellido}</td>
+        <td>${odontologo.matricula}</td>
+        <td>
+          <button onclick="editar('${odontologo.id}')" class="editar">
+            <i class="fa fa-pen"></i>
+          </button>
+          <button onclick="eliminar('${odontologo.id}')" class="eliminar">
+            <i class="fa fa-trash"></i>
+          </button>
+        </td>
+      </tr>`;
+      });
 
-  // Revisar URL 
-  const url = "https://dentalsystem-production.up.railway.app/api/v1/usuario/registrar";
-  const options = {
-      method: 'POST',
-      headers: {
-      'Content-Type': 'application/json'
-},
-body: JSON.stringify(body)
-};
+    }).catch(error => {
+      alert('Ocurrio un error', error);
+    });
 
-
-fetch(url, options)
-.then(response => {
-  console.log(response.json());
-})
-  .catch(error => {
-  console.error(error); 
 });
 
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  const nombre = document.getElementById("nombre").value;
+  const apellido = document.getElementById("apellido").value;
+  const matricula = document.getElementById("matricula").value;
+  const calle = document.getElementById("calle").value;
+  const numero = document.getElementById("numero").value;
+  const localidad = document.getElementById("localidad").value;
+  const provincia = document.getElementById("provincia").value;
+
+  const direccion = {
+    calle: calle,
+    numero: numero,
+    localidad: localidad,
+    provincia: provincia
+  }
+
+  const odontologoBody = {
+    nombre: nombre,
+    apellido: apellido,
+    matricula: matricula,
+    direccion: [
+      direccion
+    ]
+  }
+
+
+  const endpoint2 = 'https://dentalsystem-production.up.railway.app/api/v1/odontologo/crear';
+  const settings = {
+    method: 'POST',
+    body: JSON.stringify(odontologoBody),
+    headers: {
+      authorization: "Bearer " + jwt,
+      'Content-type': 'application/json; charset=UTF-8'
+    }
+  }
+
+  fetch(endpoint2, settings)
+    .then(response => response.json())
+    .then(odontologo => {
+      console.log(odontologo);
+      bodyTabla.innerHTML +=
+      `<tr>
+      <td>${odontologo.nombre}</td>
+      <td>${odontologo.apellido}</td>
+      <td>${odontologo.matricula}</td>
+      
+      <td>
+        <button onclick="editar('${odontologo.id}')" class="editar">
+          <i class="fa fa-pen"></i>
+        </button>
+        <button onclick="eliminar('${odontologo.id}')" class="eliminar">
+          <i class="fa fa-trash"></i>
+        </button>
+      </td>
+    </tr>`;
+
+    }).catch(error => {  // Si falla
+      console.log(error);
+      alert('Upss tenemos un error :(');
+    });
+
+
+
+});
+
+function editar(id) {
+
+  const endpoint = 'https://dentalsystem-production.up.railway.app/api/v1/odontologo/buscar/'+id;
+  const settings = {
+    method: 'GET',
+    headers: {
+      authorization: "Bearer " + jwt
+    }
+  }
+
+  fetch(endpoint, settings)
+    .then(response => response.json())
+    .then(response => {
+    console.log(response)
+  
+        document.getElementById("nombre").value = response.nombre;
+        document.getElementById("apellido").value = response.apellido;
+        document.getElementById("matricula").value  = response.matricula;
+        document.getElementById("calle").value = response.direccion[0].calle;
+        document.getElementById("numero").value  = response.direccion[0].numero;
+        document.getElementById("localidad").value  = response.direccion[0].localidad;
+        document.getElementById("provincia").value  = response.direccion[0].provincia;
+        
+    }).catch(error => {  // Si falla
+      console.log(error);
+      alert('Upss tenemos un error :(');
+    });
+
+  console.log(id);
+}
+
+function eliminar(id) {
+  const endpoint = 'https://dentalsystem-production.up.railway.app/api/v1/odontologo/eliminar/'+id;
+  const settings = {
+    method: 'DELETE',
+    headers: {
+      authorization: "Bearer " + jwt
+    }
+  }
+
+  fetch(endpoint, settings)
+    .then(response => {
+      console.log(odontologo);
+      if(response.ok){
+        alert('Se elimino un odontologo');
+        location.reload(true);
+      }else {
+        alert('No se puede eliminar el odontologo');
+      }
+    }).catch(error => {  // Si falla
+      console.log(error);
+      alert('Upss tenemos un error :(');
+    });
 }

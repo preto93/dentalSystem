@@ -9,6 +9,10 @@
 </head>
 <body>
     <section id="turno">
+      <div class="logo-container">
+        <i class="fa-solid fa-tooth"></i>
+        <p>DentalSystem</p>
+    </div>
         <h1 class="title">TURNOS</h1>
         <div id ="turnoscontenedor">
         <div id="botonesturnos">
@@ -31,11 +35,27 @@
         <label  id="button3" for="toggleCheckboxFecha" class="toggle-labelFecha">Elegir fecha y hora</label>
         <input type="checkbox" id="toggleCheckboxFecha">
         <input id="fechasDisponibles"  type="date" value="">
-        </div>
-        </div>
         <div id="botonconfirmar">
-        <button id="okturno">Confirmar turno</button>
+          <button id="okturno">Guardar turno</button>
+          </div>
         </div>
+        
+        <table id="bodyTabla" class="table">
+          <thead>
+              <tr>
+                  <th scope="col">Paciente</th>
+                  <th scope="col">Odontologo</th>
+                  <th scope="col">Fecha del turno</th>
+                  <th scope="col">Aciones</th>
+              </tr>
+            </thead>
+          <tbody id="tBody">
+
+          </tbody>
+      </table>
+
+        </div>
+        
         </div>
         <a href="home.html" class="regresar"><i class="fa-solid fa-circle-arrow-left"></i>Volver</a>
     </section>
