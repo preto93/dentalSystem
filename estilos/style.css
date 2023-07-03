@@ -440,7 +440,7 @@ button {
 }
 
 #turnoscontenedor{
-    background: #c3bfbf;
+    background: #514a81;
     height: 70vh;
     width: 140vh;
     display: flex;
@@ -556,7 +556,6 @@ button {
 display: flex;
 flex-direction: column;
 align-items: center;
-width: 150vh;
 }
 
 table {
@@ -573,6 +572,7 @@ thead {
 th {
     text-transform: uppercase;
     color:#fff;
+    padding: 10px
 }
 
 
@@ -647,6 +647,11 @@ th {
 #bodyTabla {
     margin-top: 40px;
 }
+
+#odontologo table {
+    width: 600px;
+}
+
 
 
 /*  RESPONSIVEEEEEEEE */
@@ -729,7 +734,7 @@ th {
     }
 
     #turnoscontenedor{
-        width: 100vh;
+        width: 80vh;
 
     }
 
