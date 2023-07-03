@@ -28,6 +28,7 @@
                     <div class="col">
                         <label for="nombre" class="form-label">Nombre</label>
                         <input type="text" class="form-control" id="nombre" required>
+                        <input type="text" id = "idPaciente" class="hidden ">
                     </div>
                     <div class="col">
                         <label for="apellido" class="form-label">Apellido</label>
@@ -64,7 +65,8 @@
                         <input type="text" class="form-control" id="provincia">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary" style="margin: 1rem;">Guardar</button>
+                <button type="submit" id="guardar" class="btn btn-primary" style="margin: 1rem;">Guardar</button>
+                <button type="submit" id="editar" onclick="guardarEditar();" class="hidden btn btn-primary" style="margin: 1rem;">Editar</button>
             </form>
             <table id="bodyTabla" class="table">
                 <thead>

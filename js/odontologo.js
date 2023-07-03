@@ -28,10 +28,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
         <td>${odontologo.apellido}</td>
         <td>${odontologo.matricula}</td>
         <td>
-          <button onclick="editar('${odontologo.id}')" class="editar">
+          <button onclick="editar('${odontologo.id}');" class="editar">
             <i class="fa fa-pen"></i>
           </button>
-          <button onclick="eliminar('${odontologo.id}')" class="eliminar">
+          <button onclick="eliminar('${odontologo.id}');" class="eliminar">
             <i class="fa fa-trash"></i>
           </button>
         </td>
@@ -93,10 +93,10 @@ form.addEventListener('submit', function (event) {
       <td>${odontologo.matricula}</td>
       
       <td>
-        <button onclick="editar('${odontologo.id}')" class="editar">
+        <button onclick="editar('${odontologo.id}');" class="editar">
           <i class="fa fa-pen"></i>
         </button>
-        <button onclick="eliminar('${odontologo.id}')" class="eliminar">
+        <button onclick="eliminar('${odontologo.id}');" class="eliminar">
           <i class="fa fa-trash"></i>
         </button>
       </td>
@@ -112,6 +112,9 @@ form.addEventListener('submit', function (event) {
 });
 
 function editar(id) {
+console.log(id);
+  document.getElementById('guardar').classList.add('hidden');
+  document.getElementById('editar').classList.remove('hidden')
 
   const endpoint = 'https://dentalsystem-production.up.railway.app/api/v1/odontologo/buscar/'+id;
   const settings = {
@@ -125,7 +128,7 @@ function editar(id) {
     .then(response => response.json())
     .then(response => {
     console.log(response)
-  
+        document.getElementById('idOdontologo').value = response.id;
         document.getElementById("nombre").value = response.nombre;
         document.getElementById("apellido").value = response.apellido;
         document.getElementById("matricula").value  = response.matricula;

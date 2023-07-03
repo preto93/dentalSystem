@@ -56,9 +56,10 @@ h1 {
 
 
 #ingreso form{
-    width: 270px;
-margin-top: 50px;
+    width: 470px;
+    margin-top: 50px;
 }
+
 
 form {
     width: 45%;
@@ -173,7 +174,7 @@ button {
 #button2 {
     color: #fff;
     border: none;
-    background: linear-gradient(to right, #cb232c, #291dce);
+    background: linear-gradient(to right, #cb232c, #4a42b8);
     padding: 15px 15px;
     margin-top: 15px;
     cursor: pointer;
@@ -197,6 +198,15 @@ button {
     
 }
 
+#button2:hover{
+    color:#3514dc;
+}
+
+#button3:hover{
+    color:#3514dc;
+}
+
+
 .regresar{
     font-size: 20px;
     padding-top: 40px;
@@ -210,6 +220,11 @@ button {
 .regresar i {
     font-size: 60px;
     padding-bottom: 20px;
+}
+
+.regresar :hover{
+    color:  #020073;
+
 }
 
 #toggleCheckboxRol {
@@ -646,13 +661,20 @@ th {
 
 #bodyTabla {
     margin-top: 40px;
+    
 }
 
 #odontologo table {
     width: 600px;
 }
 
-
+.visible {
+    display: block !important;
+  }
+  
+  .hidden {
+    display: none !important;
+  }
 
 /*  RESPONSIVEEEEEEEE */
 @media screen and (min-width: 401px) and (max-width: 1400px) {
@@ -683,7 +705,7 @@ th {
     }
 
     #ingreso form{
-        width: 220px;
+        width: 320px;
         margin-top: 100px;
         align-items: center;
         text-align: center;
@@ -814,3 +836,4 @@ padding: 5px;
 
 
 }
+

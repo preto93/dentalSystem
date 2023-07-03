@@ -127,7 +127,68 @@ form.addEventListener('submit', function (event) {
 
 });
 
+function guardarEditar(){
+  const btnEditar = document.getElementById('editar');
+
+  const idPaciente = document.getElementById('idPaciente').value;
+  const nombre = document.getElementById("nombre").value;
+  const apellido = document.getElementById("apellido").value;
+  const dni = document.getElementById("dni").value;
+  const fecha = document.getElementById("fecha").value;
+  const calle = document.getElementById("calle").value;
+  const numero = document.getElementById("numero").value;
+  const localidad = document.getElementById("localidad").value;
+  const provincia = document.getElementById("provincia").value;
+
+  const direccion = {
+    calle: calle,
+    numero: numero,
+    localidad: localidad,
+    provincia: provincia
+  }
+
+  const pacienteBody = {
+    id: idPaciente,
+    nombre: nombre,
+    apellido: apellido,
+    dni: dni,
+    fechaAlta: fecha,
+    direccion: [
+      direccion
+    ]
+  }
+
+
+
+
+  const endpoint2 = 'https://dentalsystem-production.up.railway.app/api/v1/paciente/editar';
+  const settings = {
+    method: 'PUT',
+    body: JSON.stringify(pacienteBody),
+    headers: {
+      authorization: "Bearer " + jwt,
+      'Content-type': 'application/json; charset=UTF-8'
+    }
+  }
+
+  fetch(endpoint2, settings)
+    .then(response => response.json())
+    .then(paciente => {
+      console.log(paciente);
+      location.reload(true);
+
+    }).catch(error => {  // Si falla
+      console.log(error);
+      alert('Upss tenemos un error :(');
+    });
+
+
+}
+
 function editar(id) {
+
+ document.getElementById('guardar').classList.add('hidden');
+ document.getElementById('editar').classList.remove('hidden')
 
   const endpoint = 'https://dentalsystem-production.up.railway.app/api/v1/paciente/buscar/'+id;
   const settings = {
@@ -141,7 +202,7 @@ function editar(id) {
     .then(response => response.json())
     .then(response => {
     console.log(response)
-  
+        document.getElementById('idPaciente').value = response.id;
         document.getElementById("nombre").value = response.nombre;
         document.getElementById("apellido").value = response.apellido;
         document.getElementById("dni").value  = response.dni;
