@@ -17,13 +17,14 @@ document.addEventListener('DOMContentLoaded', function() {
       bodyTabla.innerHTML = '';
       response.forEach(turno => {
         let fechaString = '';
-   //     if (paciente.fechaAlta) {
-      //    fechaString = (paciente.fechaAlta + "T").split('T')[0];
-     //   }
+       if (turno.fechaYHora) {
+       fechaString = (turno.fechaYHora + "T").split('T')[0];
+      }
         bodyTabla.innerHTML +=
         `<tr>
         <td>${turno.paciente.nombre}</td>
         <td>${turno.odontologo.nombre}</td>
+        <td>${fechaString}</td>
         <td>
           <button onclick="editarT('${turno.id}')" class="editar">
             <i class="fa fa-pen"></i>
@@ -39,6 +40,54 @@ document.addEventListener('DOMContentLoaded', function() {
       alert('Ocurrio un error', error);
     });
 
+
+    const selectP = document.getElementById('selectP');
+    const endpoint2 = 'https://dentalsystem-production.up.railway.app/api/v1/paciente/todos';
+    const settings2 = {
+      method: 'GET',
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+        'Authorization': "Bearer " + jwt
+      }
+    }
+  
+    fetch(endpoint2, settings2)
+      .then(response => response.json())
+      .then(response => {
+        console.log(response);
+        selectP.innerHTML = '';
+        response.forEach(paciente => {
+         selectP.innerHTML +=
+          `<option>${paciente.nombre} ${paciente.apellido}</option>`;
+        });
+  
+      }).catch(error => {
+        alert('Ocurrio un error', error);
+      });
+      
+      const selectO = document.getElementById('selectO');
+      const endpoint3= 'https://dentalsystem-production.up.railway.app/api/v1/odontologo/todos';
+      const settings3 = {
+        method: 'GET',
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+          'Authorization': "Bearer " + jwt
+        }
+      }
+    
+      fetch(endpoint3, settings3)
+        .then(response => response.json())
+        .then(response => {
+          console.log(response);
+          selectO.innerHTML = '';
+          response.forEach(odontologo => {
+           selectO.innerHTML +=
+            `<option>${odontologo.nombre} ${odontologo.apellido}</option>`;
+          });
+    
+        }).catch(error => {
+          alert('Ocurrio un error', error);
+        });
 });
 
 const okturnos = document.getElementById('okturno');
