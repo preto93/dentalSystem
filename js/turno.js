@@ -1,12 +1,12 @@
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   let jwt = localStorage.getItem("jwt");
   const endpoint1 = "https://dentalsystem-production.up.railway.app/api/v1/turno/todos";
   const settings = {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer '+ jwt
+      'Authorization': 'Bearer ' + jwt
     }
   };
 
@@ -17,11 +17,11 @@ document.addEventListener('DOMContentLoaded', function() {
       bodyTabla.innerHTML = '';
       response.forEach(turno => {
         let fechaString = '';
-       if (turno.fechaYHora) {
-       fechaString = (turno.fechaYHora + "T").split('T')[0];
-      }
+        if (turno.fechaYHora) {
+          fechaString = (turno.fechaYHora + "T").split('T')[0];
+        }
         bodyTabla.innerHTML +=
-        `<tr>
+          `<tr>
         <td>${turno.paciente.nombre}</td>
         <td>${turno.odontologo.nombre}</td>
         <td>${fechaString}</td>
@@ -41,75 +41,109 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
-    const selectP = document.getElementById('selectP');
-    const endpoint2 = 'https://dentalsystem-production.up.railway.app/api/v1/paciente/todos';
-    const settings2 = {
-      method: 'GET',
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-        'Authorization': "Bearer " + jwt
-      }
+  const selectP = document.getElementById('selectP');
+  const endpoint2 = 'https://dentalsystem-production.up.railway.app/api/v1/paciente/todos';
+  const settings2 = {
+    method: 'GET',
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+      'Authorization': "Bearer " + jwt
     }
-  
-    fetch(endpoint2, settings2)
-      .then(response => response.json())
-      .then(response => {
-        console.log(response);
-        selectP.innerHTML = '';
-        response.forEach(paciente => {
-         selectP.innerHTML +=
-          `<option>${paciente.nombre} ${paciente.apellido}</option>`;
-        });
-  
-      }).catch(error => {
-        alert('Ocurrio un error', error);
+  }
+
+  fetch(endpoint2, settings2)
+    .then(response => response.json())
+    .then(response => {
+      console.log(response);
+      selectP.innerHTML = '';
+      response.forEach(paciente => {
+        selectP.innerHTML +=
+          `<option value ="${paciente.id}">${paciente.nombre} ${paciente.apellido}</option>`;
       });
-      
-      const selectO = document.getElementById('selectO');
-      const endpoint3= 'https://dentalsystem-production.up.railway.app/api/v1/odontologo/todos';
-      const settings3 = {
-        method: 'GET',
-        headers: {
-          'Content-type': 'application/json; charset=UTF-8',
-          'Authorization': "Bearer " + jwt
-        }
-      }
-    
-      fetch(endpoint3, settings3)
-        .then(response => response.json())
-        .then(response => {
-          console.log(response);
-          selectO.innerHTML = '';
-          response.forEach(odontologo => {
-           selectO.innerHTML +=
-            `<option>${odontologo.nombre} ${odontologo.apellido}</option>`;
-          });
-    
-        }).catch(error => {
-          alert('Ocurrio un error', error);
-        });
+
+    }).catch(error => {
+      alert('Ocurrio un error', error);
+    });
+
+  const selectO = document.getElementById('selectO');
+  const endpoint3 = 'https://dentalsystem-production.up.railway.app/api/v1/odontologo/todos';
+  const settings3 = {
+    method: 'GET',
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+      'Authorization': "Bearer " + jwt
+    }
+  }
+
+  fetch(endpoint3, settings3)
+    .then(response => response.json())
+    .then(response => {
+      console.log(response);
+      selectO.innerHTML = '';
+      response.forEach(odontologo => {
+        selectO.innerHTML +=
+          `<option value ="${odontologo.id}">${odontologo.nombre} ${odontologo.apellido}</option>`;
+      });
+
+    }).catch(error => {
+      alert('Ocurrio un error', error);
+    });
 });
 
 const okturnos = document.getElementById('okturno');
 
-okturnos.addEventListener('click', function(event) {
-  const pacienteSeleccionado = document.getElementById('listadopacientes').value;
-  const odontologoSeleccionado = document.getElementById('listadoOdontologos').value;
-  const fechaSeleccionada = document.getElementById('fechasDisponibles').value;
+okturnos.addEventListener('click', function (event) {
+  let jwt = localStorage.getItem("jwt");
+  const pacienteSeleccionado = document.getElementById('selectP').value;
+  const odontologoSeleccionado = document.getElementById('selectO').value;
+  const fechaSeleccionada = document.getElementById('fecha').value;
+  const horaSelecionada = document.getElementById('hora').value;
 
-  alert('El turno se ha reservado con éxito');
-  guardarAccion(pacienteSeleccionado, odontologoSeleccionado, fechaSeleccionada);
+  const pacienteO = {
+    id: pacienteSeleccionado
+  };
+
+  const odontologoO = {
+    id: odontologoSeleccionado
+  };
+
+  const body = {
+    paciente: pacienteO,
+    odontologo: odontologoO,
+    fechaYHora: `${fechaSeleccionada}T${horaSelecionada}`
+  };
+
+  console.log(body);
+
+  const url = "https://dentalsystem-production.up.railway.app/api/v1/turno/crear";
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': "Bearer " + jwt
+    },
+    body: JSON.stringify(body)
+  };
+
+  fetch(url, options)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+    })
+    .catch(error => {
+      console.error(error);
+    });
 });
 
 function guardarAccion(paciente, odontologo, fecha) {
   console.log(paciente, odontologo);
-  
-  const pacienteO= {
-      id : paciente.id
+
+  const pacienteO = {
+    id: paciente.id
   };
 
   const odontologoO = {
-    id : odontologo.id
+    id: odontologo.id
   };
 
   const body = {
@@ -140,10 +174,10 @@ function guardarAccion(paciente, odontologo, fecha) {
 }
 
 
-function editarT(id){
+function editarT(id) {
   console.log(id);
 }
 
-function eliminarT(id){
+function eliminarT(id) {
   console.log(id);
 }
