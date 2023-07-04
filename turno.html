@@ -19,8 +19,8 @@
         <p>DentalSystem</p>
     </div>
         <h1 class="title">TURNOS</h1>
-        <div id ="turnoscontenedor">
-        <div id="botonesturnos">
+        <div  id ="tablaContenedor" class="container d-flex flex-column align-items-center gap-4">
+        <div id="botonesturnos" >
         <label  id="button3" for="toggleCheckboxPacientes" class="toggle-labelPacientes">Asignar paciente</label>
       <input type="checkbox" id="toggleCheckboxPacientes">
       <input type="text" id="idTurno" class="hidden">
@@ -46,7 +46,7 @@
           </div>
         </div>
         
-        <table id="bodyTabla" class="table">
+        <table class="table">
           <thead>
               <tr>
                   <th scope="col">Paciente</th>
@@ -55,7 +55,7 @@
                   <th scope="col">Aciones</th>
               </tr>
             </thead>
-          <tbody id="tBody">
+          <tbody id="bodyTabla">
 
           </tbody>
       </table>

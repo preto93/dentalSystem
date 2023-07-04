@@ -554,7 +554,9 @@ button:hover{
     background: #d279de;
 }
 
-
+#turno table.tr{
+    background: ;
+}
 
 #okturno {
     color: #fff;
@@ -898,6 +900,19 @@ padding: 5px;
 
 #newpaciente h3 {
     font-size: 15px;
+}
+
+#turnos{
+    width: 100%;
+
+}
+
+.logo-container{
+    display: none;
+}
+
+#botonesturnos{
+    width: 25vh;
 }
 
 
