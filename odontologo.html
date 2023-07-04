@@ -11,14 +11,15 @@
     <!-- <section id="odontologo">-->
     <section id="odontologo">
         <a href="home.html" class="regresar"><i class="fa-solid fa-circle-arrow-left"></i>Volver</a>
+
         <div  id ="tablaContenedor" class="container d-flex flex-column align-items-center gap-4">
 
             <form>
                 <div class="row">
                     <div class="col">
                         <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="hidden" id="idOdontologo">
                         <input type="text" class="form-control" id="nombre" required>
+                        <input type="text" id = "idOdontologo" class="hidden ">
                     </div>
                     <div class="col">
                         <label for="apellido" class="form-label">Apellido</label>
@@ -30,30 +31,30 @@
                         <label for="matricula" class="form-label">Matricula</label>
                         <input type="text" class="form-control" id="matricula" required >
                     </div>
-                    <div class="row"> 
-                        <div class="col">
-                            <label for="calle" class="form-label">Calle</label>
-                            <input type="text" class="form-control" id="calle" required>
-                        </div>
-                        <div class="col">
-                            <label for="numero" class="form-label">N° Calle</label>
-                            <input type="number" class="form-control" id="numero" required>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <label for="localidad" class="form-label">Localidad</label>
-                            <input type="text" class="form-control" id="localidad" required >
-                        </div>
-                        <div class="col">
-                            <label for="provincia" class="form-label">Provincia</label>
-                            <input type="text" class="form-control" id="provincia">
-                        </div>
                 </div>
-                <button id="guardar" type="submit" class="btn btn-primary" style="margin: 1rem;">Guardar</button>
-                <button id="editar" type="submit" onclick="guardarEditar();" class="hidden btn btn-primary" style="margin: 1rem;">Editar</button>
+                <div class="row"> 
+                    <div class="col">
+                        <label for="calle" class="form-label">Calle</label>
+                        <input type="text" class="form-control" id="calle" required>
+                    </div>
+                    <div class="col">
+                        <label for="numero" class="form-label">N° Calle</label>
+                        <input type="number" class="form-control" id="numero" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="localidad" class="form-label">Localidad</label>
+                        <input type="text" class="form-control" id="localidad" required >
+                    </div>
+                    <div class="col">
+                        <label for="provincia" class="form-label">Provincia</label>
+                        <input type="text" class="form-control" id="provincia">
+                    </div>
+                </div>
+                <button type="submit" id="guardar" class="btn btn-primary" style="margin: 1rem;">Guardar</button>
+                <button type="submit" id="editar" onclick="guardarEditar();" class="hidden btn btn-primary" style="margin: 1rem;">Editar</button>
             </form>
-
             <table id="bodyTabla" class="table">
                 <thead>
                     <tr>
@@ -68,10 +69,10 @@
                 </tbody>
             </table>
     
+    
         </div>
-        
     </section>
-
+   
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>
