@@ -15,22 +15,20 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(response => {
       console.log(response);
       bodyTabla.innerHTML = '';
-      response.forEach(paciente => {
+      response.forEach(turno => {
         let fechaString = '';
-        if (paciente.fechaAlta) {
-          fechaString = (paciente.fechaAlta + "T").split('T')[0];
-        }
+   //     if (paciente.fechaAlta) {
+      //    fechaString = (paciente.fechaAlta + "T").split('T')[0];
+     //   }
         bodyTabla.innerHTML +=
         `<tr>
-        <td>${paciente.nombre}</td>
-        <td>${paciente.apellido}</td>
-        <td>${paciente.dni}</td>
-        <td>${fechaString}</td>
+        <td>${turno.paciente.nombre}</td>
+        <td>${turno.odontologo.nombre}</td>
         <td>
-          <button onclick="editar('${paciente.id}')" class="editar">
+          <button onclick="editarT('${turno.id}')" class="editar">
             <i class="fa fa-pen"></i>
           </button>
-          <button onclick="eliminar('${paciente.id}')" class="eliminar">
+          <button onclick="eliminarT('${turno.id}')" class="eliminar">
             <i class="fa fa-trash"></i>
           </button>
         </td>
@@ -41,20 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
       alert('Ocurrio un error', error);
     });
 
-  fetch(url, options)
-    .then(response => response.json())
-    .then(data => {
-      const pacientes = document.getElementById('listadopacientes');
-      pacientes.innerHTML = '';
-      data.array.forEach(p => {
-        listadopacientes.innerHTML +=` <option value="${p.id}">${p.nombre} ${p.apellido}</option>`
-        
-      })
-      console.log(data);
-    })
-    .catch(error => {
-      console.error(error);
-    });
 });
 
 const okturnos = document.getElementById('okturno');
@@ -104,4 +88,13 @@ function guardarAccion(paciente, odontologo, fecha) {
     .catch(error => {
       console.error(error);
     });
+}
+
+
+function editarT(id){
+  console.log(id);
+}
+
+function eliminarT(id){
+  console.log(id);
 }
