@@ -309,6 +309,21 @@ button:hover{
     border-radius: 0 0 5px 5px;
   }
 
+  #selectP{
+    font-size: 20px;
+    color:#480376;
+    font-style: bold;
+    background-color: #bdc1e7;
+    border-radius: 25px;
+  }
+
+  #selectO{
+    font-size: 20px;
+    color:#480376;
+    font-style: bold;
+    background-color: #bdc1e7;
+    border-radius: 25px;
+  }
   
 
   #listadoOdontologos {
@@ -318,6 +333,7 @@ button:hover{
     width: 140px;
     border: 1px solid #ccc;
     border-radius: 0 0 5px 5px;
+    color:#0014ca;
   }
 
 
@@ -369,6 +385,9 @@ button:hover{
     display: block; /* Muestra las opciones cuando el checkbox está marcado */
   }
 
+  #guardar{
+    border-radius: 25px;
+  }
   
  #divroles{
     background-color: #b77fb1;
@@ -460,7 +479,7 @@ button:hover{
 
 #turnoscontenedor{
     background: #514a81;
-    height: 70vh;
+    height: 50vh;
     width: 140vh;
     display: flex;
     justify-content: space-between;
@@ -475,7 +494,8 @@ button:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 500px;
+    width: 20%;
+    font-size: 15px;
     height: 500px;
     justify-content: space-around;
     align-items: center;
@@ -494,13 +514,46 @@ button:hover{
 }
 
 #turno table {
+    margin:80px;
     width: 800px;
+    height: 100px;
+    background-color: #b981e9;
+    text-align: center;
 
+
+}
+
+#turno i{
+    color:#43047b;
+}
+
+#turno button.eliminar{
+    background: none;
+    height: 20px;
+    width: 20px;
+    padding: 20px;
+}
+
+#turno button.editar{
+    background: none;
+    width: 20px;
+    height: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#turno i:hover{
+    color: #fff;
 }
 
 #botonesturnos select{
     width: 120px;
 }
+
+#turno tr:hover {
+    background: #d279de;
+}
+
 
 
 #okturno {
@@ -508,7 +561,7 @@ button:hover{
     border: none;
     background: linear-gradient(to right, #7068e0, #ce1dc8);
     padding: 15px 15px;
-    margin-top: 15px;
+    margin-top: 35px;
     cursor: pointer;
     font-size: 18px;
     border-radius: 25px;
@@ -778,6 +831,7 @@ th {
 
     #turnoscontenedor{
         width: 80vh;
+
 
     }
 
