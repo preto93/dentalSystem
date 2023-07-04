@@ -155,9 +155,99 @@ okturnos.addEventListener('click', function (event) {
 });
 
 function editarT(id) {
-  console.log(id);
+  let jwt = localStorage.getItem("jwt");
+  document.getElementById('okturno').classList.add('hidden');
+  document.getElementById('editarT').classList.remove('hidden')
+
+  const endpoint = 'https://dentalsystem-production.up.railway.app/api/v1/turno/buscar/'+id;
+  const settings = {
+    method: 'GET',
+    headers: {
+      authorization: "Bearer " + jwt
+    }
+  }
+
+  fetch(endpoint, settings)
+    .then(response => response.json())
+    .then(response => {
+    console.log(response)
+        document.getElementById('idTurno').value = response.id;
+        document.getElementById("selectP").innerHTML += `<option selected value ="${response.paciente.id}">${response.paciente.nombre} ${response.paciente.apellido}</option>`;
+        document.getElementById("selectO").innerHTML += `<option selected value ="${response.odontologo.id}">${response.odontologo.nombre} ${response.odontologo.apellido}</option>`;
+  
+    }).catch(error => {  // Si falla
+      console.log(error);
+      alert('Upss tenemos un error :(');
+    });
+
 }
 
 function eliminarT(id) {
-  console.log(id);
+  let jwt = localStorage.getItem("jwt");
+  const url = "https://dentalsystem-production.up.railway.app/api/v1/turno/eliminar/"+id;
+  const options = {
+    method: 'DELETE',
+    headers: {
+      'Authorization': "Bearer " + jwt
+    }
+  };
+
+  fetch(url, options)
+    .then(data => {
+      console.log(data);
+      alert('Turno dado de baja');
+      location.reload(true);
+      })
+    
+    .catch(error => {
+      console.error(error);
+    });
+}
+
+
+function guardarEditarT(){
+  let jwt = localStorage.getItem("jwt");
+  const idT = document.getElementById('idTurno')
+  const pacienteSeleccionado = document.getElementById('selectP').value;
+  const odontologoSeleccionado = document.getElementById('selectO').value;
+  const fechaSeleccionada = document.getElementById('fecha').value;
+  const horaSelecionada = document.getElementById('hora').value;
+
+  const pacienteO = {
+    id: pacienteSeleccionado
+  };
+
+  const odontologoO = {
+    id: odontologoSeleccionado
+  };
+
+  const body = {
+    id: idT,
+    paciente: pacienteO,
+    odontologo: odontologoO,
+    fechaYHora: `${fechaSeleccionada}T${horaSelecionada}`
+  };
+
+  console.log(body);
+
+  const url = "https://dentalsystem-production.up.railway.app/api/v1/turno/editar";
+  const options = {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': "Bearer " + jwt
+    },
+    body: JSON.stringify(body)
+  };
+
+  fetch(url, options)
+    .then(data => {
+      console.log(data);
+      location.reload(true);
+      })
+    
+    .catch(error => {
+      console.error(error);
+    });
+
 }

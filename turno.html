@@ -23,6 +23,7 @@
         <div id="botonesturnos">
         <label  id="button3" for="toggleCheckboxPacientes" class="toggle-labelPacientes">Asignar paciente</label>
       <input type="checkbox" id="toggleCheckboxPacientes">
+      <input type="text" id="idTurno" class="hidden">
       <div >
         <select id="selectP">  
 
@@ -41,6 +42,7 @@
         <input  type="time"  id="hora">
         <div id="botonconfirmar">
           <button id="okturno">Guardar turno</button>
+          <button id="editarT" class="hidden" onclick="guardarEditarT();">Editar</button>
           </div>
         </div>
         
