@@ -54,7 +54,7 @@ fetch(url, options)
           //location.replace('home.html');
           window.location.href = "/home.html";
       } else {
-          alert('Ups tenemos un error '+ response);
+          alert('Usuario no encontrado, debe registrarse '+ response);
 
       };
 })
