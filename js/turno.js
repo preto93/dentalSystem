@@ -129,50 +129,30 @@ okturnos.addEventListener('click', function (event) {
     .then(response => response.json())
     .then(data => {
       console.log(data);
-    })
+      let fechaString = '';
+        if (data.fechaYHora) {
+          fechaString = (data.fechaYHora + "T").split('T')[0];
+        }
+        bodyTabla.innerHTML +=
+          `<tr>
+        <td>${data.paciente.nombre}</td>
+        <td>${data.odontologo.nombre}</td>
+        <td>${fechaString}</td>
+        <td>
+          <button onclick="editarT('${data.id}')" class="editar">
+            <i class="fa fa-pen"></i>
+          </button>
+          <button onclick="eliminarT('${data.id}')" class="eliminar">
+            <i class="fa fa-trash"></i>
+          </button>
+        </td>
+      </tr>`;
+      })
+    
     .catch(error => {
       console.error(error);
     });
 });
-
-function guardarAccion(paciente, odontologo, fecha) {
-  console.log(paciente, odontologo);
-
-  const pacienteO = {
-    id: paciente.id
-  };
-
-  const odontologoO = {
-    id: odontologo.id
-  };
-
-  const body = {
-    paciente: pacienteO,
-    odontologo: odontologoO,
-    fecha: fecha
-  };
-
-  console.log(body);
-
-  const url = "https://dentalsystem-production.up.railway.app/api/v1/turno/registrar";
-  const options = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(body)
-  };
-
-  fetch(url, options)
-    .then(response => response.json())
-    .then(data => {
-      console.log(data);
-    })
-    .catch(error => {
-      console.error(error);
-    });
-}
-
 
 function editarT(id) {
   console.log(id);
