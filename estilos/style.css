@@ -303,36 +303,24 @@ button:hover{
   #listadopacientes {
     display: none; /* Oculta las opciones por defecto */
     padding: 5px 10px;
-    background-color: #c717df;
+    background-color: #eeb3f6;
+    width: 140px;
     border: 1px solid #ccc;
     border-radius: 0 0 5px 5px;
   }
 
   
-  #listadopacientes option{
-    padding: 10px;
-    list-style: none;
-    border: 1px solid #a40808;
-    }
-
-  #listadopacientes li {
-    cursor: pointer;
-    margin-bottom: 5px; /* Espacio entre las opciones */
-  }
 
   #listadoOdontologos {
     display: none; /* Oculta las opciones por defecto */
     padding: 5px 10px;
-    background-color: #c717df;
+    background-color: #eeb3f6;
+    width: 140px;
     border: 1px solid #ccc;
     border-radius: 0 0 5px 5px;
   }
 
 
-  #listadoOdontologos option{
-    padding: 10px;
-    list-style: none;
-    }
 
     #fechasDisponibles {
         display: none; /* Oculta las opciones por defecto */
@@ -353,7 +341,17 @@ button:hover{
             
     }
 
+    #fecha {
+        width: 120px;
+        color:#ca00a5;
+        text-align: center;
+    }
     
+    #hora {
+        width: 120px;
+        color:#ca00a5;
+        text-align: center;
+    }
     #toggleCheckboxRol:checked ~ #roles {
         display: block; /* Muestra las opciones cuando el checkbox está marcado */
       }
@@ -477,13 +475,12 @@ button:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 400px;
-    height: 600px;
+    width: 500px;
+    height: 500px;
     justify-content: space-around;
     align-items: center;
     text-align: center;
     justify-content: space-around;
-    padding-left: 100px;
     background: #956eba;
     border-radius: 35px;
     margin: 40px
@@ -500,6 +497,11 @@ button:hover{
     width: 800px;
 
 }
+
+#botonesturnos select{
+    width: 120px;
+}
+
 
 #okturno {
     color: #fff;
