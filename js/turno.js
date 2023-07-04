@@ -207,7 +207,7 @@ function eliminarT(id) {
 
 function guardarEditarT(){
   let jwt = localStorage.getItem("jwt");
-  const idT = document.getElementById('idTurno')
+  const idT = document.getElementById('idTurno').value
   const pacienteSeleccionado = document.getElementById('selectP').value;
   const odontologoSeleccionado = document.getElementById('selectO').value;
   const fechaSeleccionada = document.getElementById('fecha').value;
