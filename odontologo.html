@@ -17,7 +17,7 @@
                 <div class="row">
                     <div class="col">
                         <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="hidden" id="idPaciente">
+                        <input type="text" class="hidden" id="idOdontologo">
                         <input type="text" class="form-control" id="nombre" required>
                     </div>
                     <div class="col">
@@ -51,7 +51,7 @@
                         </div>
                 </div>
                 <button id="guardar" type="submit" class="btn btn-primary" style="margin: 1rem;">Guardar</button>
-                <button id="editar" type="submit" class="hidden btn btn-primary" style="margin: 1rem;">Editar</button>
+                <button id="editar" type="submit" onclick="guardarEditar();" class="hidden btn btn-primary" style="margin: 1rem;">Editar</button>
             </form>
 
             <table id="bodyTabla" class="table">

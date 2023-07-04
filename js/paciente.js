@@ -2,7 +2,6 @@ const bodyTabla = document.getElementById("tBody");
 const form = document.querySelector("form");
 const jwt = localStorage.getItem("jwt");
 console.log(jwt.toString());
-let pacientes = [];
 
 document.addEventListener('DOMContentLoaded', function (event) {
 

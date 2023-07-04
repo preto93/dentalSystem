@@ -28,10 +28,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
         <td>${odontologo.apellido}</td>
         <td>${odontologo.matricula}</td>
         <td>
-          <button onclick="editar('${odontologo.id}');" class="editar">
+          <button onclick="editarO('${odontologo.id}');" class="editar">
             <i class="fa fa-pen"></i>
           </button>
-          <button onclick="eliminar('${odontologo.id}');" class="eliminar">
+          <button onclick="eliminarO('${odontologo.id}');" class="eliminar">
             <i class="fa fa-trash"></i>
           </button>
         </td>
@@ -93,10 +93,10 @@ form.addEventListener('submit', function (event) {
       <td>${odontologo.matricula}</td>
       
       <td>
-        <button onclick="editar('${odontologo.id}');" class="editar">
+        <button onclick="editarO('${odontologo.id}');" class="editar">
           <i class="fa fa-pen"></i>
         </button>
-        <button onclick="eliminar('${odontologo.id}');" class="eliminar">
+        <button onclick="eliminarO('${odontologo.id}');" class="eliminar">
           <i class="fa fa-trash"></i>
         </button>
       </td>
@@ -111,7 +111,56 @@ form.addEventListener('submit', function (event) {
 
 });
 
-function editar(id) {
+function guardarEditar(){
+  const idOdontologo = document.getElementById('idOdontologo'). value;
+  const nombre = document.getElementById("nombre").value;
+  const apellido = document.getElementById("apellido").value;
+  const matricula = document.getElementById("matricula").value;
+  const calle = document.getElementById("calle").value;
+  const numero = document.getElementById("numero").value;
+  const localidad = document.getElementById("localidad").value;
+  const provincia = document.getElementById("provincia").value;
+
+  const direccion = {
+    calle: calle,
+    numero: numero,
+    localidad: localidad,
+    provincia: provincia
+  }
+
+  const odontologoBody = {
+    id:  idOdontologo,
+    nombre: nombre,
+    apellido: apellido,
+    matricula: matricula,
+    direccion: [
+      direccion
+    ]
+  }
+
+
+  const endpoint2 = 'https://dentalsystem-production.up.railway.app/api/v1/odontologo/editar';
+  const settings = {
+    method: 'PUT',
+    body: JSON.stringify(odontologoBody),
+    headers: {
+      authorization: "Bearer " + jwt,
+      'Content-type': 'application/json; charset=UTF-8'
+    }
+  }
+
+  fetch(endpoint2, settings)
+    .then(response => {
+      console.log(response);
+      location.reload(true);
+
+    }).catch(error => {  // Si falla
+      console.log(error);
+      alert('Upss tenemos un error :(');
+    });
+}
+
+function editarO(id) {
 console.log(id);
   document.getElementById('guardar').classList.add('hidden');
   document.getElementById('editar').classList.remove('hidden')
@@ -145,7 +194,7 @@ console.log(id);
   console.log(id);
 }
 
-function eliminar(id) {
+function eliminarO(id) {
   const endpoint = 'https://dentalsystem-production.up.railway.app/api/v1/odontologo/eliminar/'+id;
   const settings = {
     method: 'DELETE',

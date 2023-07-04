@@ -1,13 +1,45 @@
+
 document.addEventListener('DOMContentLoaded', function() {
   let jwt = localStorage.getItem("jwt");
-  const url = "https://dentalsystem-production.up.railway.app/api/v1/paciente/todos";
-  const options = {
+  const endpoint1 = "https://dentalsystem-production.up.railway.app/api/v1/turno/todos";
+  const settings = {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer '+ jwt
     }
   };
+
+  fetch(endpoint1, settings)
+    .then(response => response.json())
+    .then(response => {
+      console.log(response);
+      bodyTabla.innerHTML = '';
+      response.forEach(paciente => {
+        let fechaString = '';
+        if (paciente.fechaAlta) {
+          fechaString = (paciente.fechaAlta + "T").split('T')[0];
+        }
+        bodyTabla.innerHTML +=
+        `<tr>
+        <td>${paciente.nombre}</td>
+        <td>${paciente.apellido}</td>
+        <td>${paciente.dni}</td>
+        <td>${fechaString}</td>
+        <td>
+          <button onclick="editar('${paciente.id}')" class="editar">
+            <i class="fa fa-pen"></i>
+          </button>
+          <button onclick="eliminar('${paciente.id}')" class="eliminar">
+            <i class="fa fa-trash"></i>
+          </button>
+        </td>
+      </tr>`;
+      });
+
+    }).catch(error => {
+      alert('Ocurrio un error', error);
+    });
 
   fetch(url, options)
     .then(response => response.json())
